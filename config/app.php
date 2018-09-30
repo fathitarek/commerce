@@ -181,6 +181,7 @@ Laracasts\Flash\FlashServiceProvider::class,
 Prettus\Repository\Providers\RepositoryServiceProvider::class,
 \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
 \InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class, 
+\InfyOm\RoutesExplorer\RoutesExplorerServiceProvider::class,
 
 
     ],
