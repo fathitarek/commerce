@@ -25,4 +25,7 @@ Route::group(['namespace' => 'Api'], function() {
 
 Route::resource('categories', 'categoriesAPIController');
 Route::resource('status_orders', 'status_orderAPIController');
+Route::post('login_buyer', 'buyersAPIController@login');
+Route::resource('buyers', 'buyersAPIController');
 });
+
