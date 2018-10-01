@@ -3,3 +3,7 @@
 </li>
 
 
+<li class="{{ Request::is('statusOrders*') ? 'active' : '' }}">
+    <a href="{!! route('statusOrders.index') !!}"><i class="fa fa-edit"></i><span>Status Orders</span></a>
+</li>
+
