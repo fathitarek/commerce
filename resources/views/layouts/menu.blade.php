@@ -11,3 +11,7 @@
     <a href="{!! route('buyers.index') !!}"><i class="fa fa-edit"></i><span>Buyers</span></a>
 </li>
 
+<li class="{{ Request::is('sellers*') ? 'active' : '' }}">
+    <a href="{!! route('sellers.index') !!}"><i class="fa fa-edit"></i><span>Sellers</span></a>
+</li>
+

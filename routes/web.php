@@ -33,3 +33,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('statusOrders', 'status_orderController');
 
 Route::resource('buyers', 'buyersController');
+
+Route::resource('sellers', 'sellersController');
