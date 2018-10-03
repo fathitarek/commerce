@@ -35,3 +35,5 @@ Route::resource('statusOrders', 'status_orderController');
 Route::resource('buyers', 'buyersController');
 
 Route::resource('sellers', 'sellersController');
+
+Route::resource('products', 'productsController');

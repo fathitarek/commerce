@@ -28,7 +28,10 @@ Route::resource('status_orders', 'status_orderAPIController');
 Route::post('login_buyer', 'buyersAPIController@login');
 Route::resource('buyers', 'buyersAPIController');
 Route::resource('sellers', 'sellersAPIController');
+Route::resource('products', 'productsAPIController');
 });
+
+
 
 
 
