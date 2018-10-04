@@ -42,7 +42,7 @@ class productsAPIController extends AppBaseController
         $this->productsRepository->pushCriteria(new LimitOffsetCriteria($request));
         //$products = $this->productsRepository->all();
 $products = DB::table('products')
-                            ->leftJoin('sellers', 'seller_id', '=', 'sellers.id')
+                            ->leftJoin('sellers', 'seller_id', '=', 'sellers.id')->select('products.*','sellers.id','sellers.name','sellers.super_name','sellers.telephone','sellers.email','sellers.description')
 //->leftJoin('images_products', 'product_id', '=', 'products.id')
                             ->paginate(10);
 
@@ -86,9 +86,11 @@ $products = DB::table('products')
         /** @var products $products */
        // $products = $this->productsRepository->findWithoutFail($id);
         $products = DB::table('products')->where('products.id',$id)
-                            ->leftJoin('sellers', 'seller_id', '=', 'sellers.id')
+                            ->leftJoin('sellers', 'seller_id', '=', 'sellers.id')->select('products.*','sellers.id','sellers.name','sellers.super_name','sellers.telephone','sellers.email','sellers.description')->get();
+
+                     
 //->leftJoin('images_products', 'product_id', '=', 'products.id')
-                            ->get();
+                            
 
         if (empty($products)) {
             return $this->sendError('Products not found');

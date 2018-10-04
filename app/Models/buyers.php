@@ -69,6 +69,6 @@ class buyers extends Model
      * @var array
      */
     protected $hidden = [
-        'password'
+        'password','token'
     ]; 
 }
