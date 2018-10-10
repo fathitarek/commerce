@@ -29,7 +29,10 @@ Route::post('login_buyer', 'buyersAPIController@login');
 Route::resource('buyers', 'buyersAPIController');
 Route::resource('sellers', 'sellersAPIController');
 Route::resource('products', 'productsAPIController');
+Route::resource('stories', 'storiesAPIController');
 });
+
+
 
 
 

@@ -19,3 +19,7 @@
     <a href="{!! route('products.index') !!}"><i class="fa fa-edit"></i><span>Products</span></a>
 </li>
 
+<li class="{{ Request::is('stories*') ? 'active' : '' }}">
+    <a href="{!! route('stories.index') !!}"><i class="fa fa-edit"></i><span>Stories</span></a>
+</li>
+

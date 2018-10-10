@@ -37,3 +37,5 @@ Route::resource('buyers', 'buyersController');
 Route::resource('sellers', 'sellersController');
 
 Route::resource('products', 'productsController');
+
+Route::resource('stories', 'storiesController');
