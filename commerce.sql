@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2018 at 10:34 PM
+-- Generation Time: Oct 10, 2018 at 07:52 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 5.6.35
 
@@ -36,6 +36,7 @@ CREATE TABLE `buyers` (
   `telephone` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `super_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `city` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
@@ -45,11 +46,12 @@ CREATE TABLE `buyers` (
 -- Dumping data for table `buyers`
 --
 
-INSERT INTO `buyers` (`id`, `name`, `email`, `password`, `telephone`, `super_name`, `token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'fathi', 'f@yahoo.com', '202cb962ac59075b964b07152d234b70', NULL, 'super fathi', '2fed3e53b257dcb94a8dc0abb613ef1c', '2018-10-01 16:25:05', '2018-10-01 16:25:05', NULL),
-(3, 'fathi', 'f2@yahoo.com', '202cb962ac59075b964b07152d234b70', NULL, 'super fathi', 'e291357d1bd365c53ec39a9f7e56559b', '2018-10-01 16:31:45', '2018-10-01 16:31:45', NULL),
-(4, 'fathi', 'f3@yahoo.com', '202cb962ac59075b964b07152d234b70', NULL, 'super fathi', '9fca3db6992f9660c70205ef54d184a7', '2018-10-01 16:32:49', '2018-10-01 16:32:49', NULL),
-(5, 'fathi', 'f4@yahoo.com', '202cb962ac59075b964b07152d234b70', '555', 'super fathi', 'f5387f20faa76fe447e88b1f441cd2b8', '2018-10-01 16:33:37', '2018-10-01 16:33:37', NULL);
+INSERT INTO `buyers` (`id`, `name`, `email`, `password`, `telephone`, `super_name`, `token`, `city`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'fathi', 'f@yahoo.com', '202cb962ac59075b964b07152d234b70', NULL, 'super fathi', '2fed3e53b257dcb94a8dc0abb613ef1c', 'cairo', '2018-10-01 16:25:05', '2018-10-01 16:25:05', NULL),
+(3, 'fathi', 'f2@yahoo.com', '202cb962ac59075b964b07152d234b70', NULL, 'super fathi', 'e291357d1bd365c53ec39a9f7e56559b', 'alex', '2018-10-01 16:31:45', '2018-10-01 16:31:45', NULL),
+(4, 'fathi', 'f3@yahoo.com', '202cb962ac59075b964b07152d234b70', NULL, 'super fathi', '9fca3db6992f9660c70205ef54d184a7', 'mansora', '2018-10-01 16:32:49', '2018-10-01 16:32:49', NULL),
+(5, 'fathi', 'f4@yahoo.com', '202cb962ac59075b964b07152d234b70', '555', 'super fathi', 'f5387f20faa76fe447e88b1f441cd2b8', 'cairo', '2018-10-01 16:33:37', '2018-10-01 16:33:37', NULL),
+(6, 'fathi', 'f5@yahoo.com', '202cb962ac59075b964b07152d234b70', '555', 'super fathi', 'c5c8670c0871ab0c87da8499c430e2cd', 'USA', '2018-10-10 15:36:09', '2018-10-10 15:36:09', NULL);
 
 -- --------------------------------------------------------
 
@@ -328,7 +330,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `buyers`
 --
 ALTER TABLE `buyers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `categories`
