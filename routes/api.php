@@ -23,7 +23,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['namespace' => 'Api'], function() {
 
-Route::resource('categories', 'categoriesAPIController');
+Route::resource('categories', 'CategoriesAPIController');
 Route::resource('status_orders', 'status_orderAPIController');
 Route::post('login_buyer', 'buyersAPIController@login');
 Route::resource('buyers', 'buyersAPIController');
