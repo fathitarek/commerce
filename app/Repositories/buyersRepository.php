@@ -25,7 +25,8 @@ class buyersRepository extends BaseRepository
         'password',
         'telephone',
         'super_name',
-        'token'
+        'token',
+        'city',
     ];
 
     /**

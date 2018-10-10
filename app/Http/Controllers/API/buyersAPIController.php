@@ -36,10 +36,11 @@ class buyersAPIController extends AppBaseController
      */
     public function index(Request $request)
     {
+
         $this->buyersRepository->pushCriteria(new RequestCriteria($request));
         $this->buyersRepository->pushCriteria(new LimitOffsetCriteria($request));
         $buyers = $this->buyersRepository->all();
-
+        dd($buyers->toArray());
         return $this->sendResponse($buyers->toArray(), 'Buyers retrieved successfully');
     }
 
@@ -58,6 +59,7 @@ class buyersAPIController extends AppBaseController
                             'email' => 'required|unique:buyers',
                             'password' => 'required',
                             'super_name' => 'required',
+                            'city' => 'required',
             ]);
 
             if ($valid->fails()) {

@@ -19,7 +19,8 @@ class CreatebuyersTable extends Migration
             $table->string('email')->unique();
             $table->text('password');
             $table->string('telephone')->nullable();
-            $table->string('super_name');
+            $table->string('super_name');   
+            $table->string('city');
             $table->text('token');
             $table->timestamps();
             $table->softDeletes();
