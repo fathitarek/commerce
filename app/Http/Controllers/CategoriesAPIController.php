@@ -11,7 +11,7 @@ use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
-class CategoriesAPIController extends AppBaseController
+class categoriesAPIController extends AppBaseController
 {
     /** @var  categoriesRepository */
     private $categoriesRepository;
