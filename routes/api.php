@@ -21,7 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 
-Route::group(['namespace' => 'Api'], function() {
+Route::group(['namespace' => 'API'], function() {
 
 Route::resource('categories', 'categoriesAPIController');
 Route::resource('status_orders', 'status_orderAPIController');
