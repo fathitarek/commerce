@@ -78,4 +78,7 @@ class sellers extends Model
         'password','token'
     ];
     
+    public function product() {
+        return $this->belongsTo('App\Models\products');
+    }
 }

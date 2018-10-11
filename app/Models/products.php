@@ -59,5 +59,8 @@ class products extends Model
         'price' => 'required'
     ];
 
-    
+    public function sellers() {
+        return $this->hasMany('App\Models\sellers');
+    }
+}
 }
