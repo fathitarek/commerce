@@ -22,11 +22,6 @@
     {!! Form::text('telephone', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Token Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('token', 'Token:') !!}
-    {!! Form::text('token', null, ['class' => 'form-control']) !!}
-</div>
 
 <!-- Super Name Field -->
 <div class="form-group col-sm-6">
