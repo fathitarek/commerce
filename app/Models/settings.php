@@ -53,7 +53,7 @@ class settings extends Model
         'email' => 'required',
         'location' => 'required',
         'telephone' => 'required',
-        'logo' => 'required'
+        'logo' => 'required|mimes:jpeg,png'
     ];
 
     
