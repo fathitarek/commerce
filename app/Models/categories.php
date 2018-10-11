@@ -47,5 +47,7 @@ class categories extends Model
         'name' => 'required'
     ];
 
-    
+   public function products() {
+        return $this->hasMany('App\Models\products');
+    } 
 }
