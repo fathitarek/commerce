@@ -16,11 +16,7 @@
     <p>{!! $sellers->email !!}</p>
 </div>
 
-<!-- Password Field -->
-<div class="form-group">
-    {!! Form::label('password', 'Password:') !!}
-    <p>{!! $sellers->password !!}</p>
-</div>
+
 
 <!-- Telephone Field -->
 <div class="form-group">
@@ -28,11 +24,7 @@
     <p>{!! $sellers->telephone !!}</p>
 </div>
 
-<!-- Token Field -->
-<div class="form-group">
-    {!! Form::label('token', 'Token:') !!}
-    <p>{!! $sellers->token !!}</p>
-</div>
+
 
 <!-- Super Name Field -->
 <div class="form-group">

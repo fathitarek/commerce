@@ -3,9 +3,7 @@
         <tr>
             <th>Name</th>
         <th>Email</th>
-        <th>Password</th>
         <th>Telephone</th>
-        <th>Token</th>
         <th>Super Name</th>
         <th>Address</th>
         <th>Description</th>
@@ -17,9 +15,7 @@
         <tr>
             <td>{!! $sellers->name !!}</td>
             <td>{!! $sellers->email !!}</td>
-            <td>{!! $sellers->password !!}</td>
             <td>{!! $sellers->telephone !!}</td>
-            <td>{!! $sellers->token !!}</td>
             <td>{!! $sellers->super_name !!}</td>
             <td>{!! $sellers->address !!}</td>
             <td>{!! $sellers->description !!}</td>
