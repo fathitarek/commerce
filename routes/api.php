@@ -38,3 +38,6 @@ Route::resource('stories', 'storiesAPIController');
 
 
 
+
+
+Route::resource('settings', 'settingsAPIController');
