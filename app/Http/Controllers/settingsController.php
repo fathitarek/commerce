@@ -10,7 +10,10 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
-use Input;
+// use Input;
+use File;
+use Illuminate\Support\Facades\Input;
+
 class settingsController extends AppBaseController
 {
     /** @var  settingsRepository */
