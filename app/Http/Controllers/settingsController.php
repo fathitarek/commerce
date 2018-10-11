@@ -131,7 +131,7 @@ class settingsController extends AppBaseController
      */
     public function update($id, UpdatesettingsRequest $request)
     {
-                $destination = public_path() . '/images/settings'; // upload path
+                $destination = public_path() . '/images/settings/'; // upload path
         $settings = $this->settingsRepository->findWithoutFail($id);
 
         if (empty($settings)) {
