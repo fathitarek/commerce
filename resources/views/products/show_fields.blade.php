@@ -7,7 +7,7 @@
 <!-- Name Field -->
 <div class="form-group">
     {!! Form::label('name', 'Name:') !!}
-    <p>{!! $products->name !!}</p>
+    <p>{!! $products->p_name !!}</p>
 </div>
 
 <!-- Category Id Field -->

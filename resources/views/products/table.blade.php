@@ -13,7 +13,7 @@
     <tbody>
     @foreach($products as $products)
         <tr>
-            <td>{!! $products->name !!}</td>
+            <td>{!! $products->p_name !!}</td>
             <td>{{ $products->category->name }}</td>
             <td>{!! $products->quantity !!}</td>
             <td>{{ $products->seller->name }}</td>
