@@ -14,7 +14,8 @@
             <td>{!! $settings->email !!}</td>
             <td>{!! $settings->location !!}</td>
             <td>{!! $settings->telephone !!}</td>
-            <td>{!! $settings->logo !!}</td>
+                           <td>{!!$settings->logo ? '<img src="/images/settings'.$settings->logo.'" height="40"/>':''!!}</td>
+
             <td>
                 {!! Form::open(['route' => ['settings.destroy', $settings->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

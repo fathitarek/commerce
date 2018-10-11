@@ -116,6 +116,7 @@ class settingsController extends AppBaseController
      */
     public function update($id, UpdatesettingsRequest $request)
     {
+                $destination = public_path() . '/images/settings'; // upload path
         $settings = $this->settingsRepository->findWithoutFail($id);
 
         if (empty($settings)) {
@@ -123,8 +124,14 @@ class settingsController extends AppBaseController
 
             return redirect(route('settings.index'));
         }
+        $input = $request->all();
 
-        $settings = $this->settingsRepository->update($request->all(), $id);
+ if(!is_null(Input::file('logo'))){
+        $logo = $this->uploadFile('logo', $destination);
+       // return $similar_sections['image_en'].$image_en ;
+        if (gettype($logo) == 'string'){$input['logo'] = $logo;}
+        }
+        $settings = $this->settingsRepository->update($inpout, $id);
 
         Flash::success('Settings updated successfully.');
 
