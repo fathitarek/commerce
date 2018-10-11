@@ -78,7 +78,7 @@ class sellers extends Model
         'password','token'
     ];
     
-    public function product() {
+    public function products() {
         return $this->hasMany('App\Models\products');
     }
 }

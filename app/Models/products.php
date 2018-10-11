@@ -59,7 +59,7 @@ class products extends Model
         'price' => 'required'
     ];
 
-    public function sellers() {
+    public function seller() {
         return $this->belongsTo('App\Models\sellers');
     }
 
