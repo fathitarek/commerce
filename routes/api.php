@@ -30,6 +30,7 @@ Route::resource('buyers', 'buyersAPIController');
 Route::resource('sellers', 'sellersAPIController');
 Route::resource('products', 'productsAPIController');
 Route::resource('stories', 'storiesAPIController');
+Route::resource('settings', 'settingsAPIController');
 });
 
 
@@ -40,4 +41,3 @@ Route::resource('stories', 'storiesAPIController');
 
 
 
-Route::resource('settings', 'settingsAPIController');
