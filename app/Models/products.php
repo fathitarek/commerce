@@ -62,5 +62,5 @@ class products extends Model
     public function sellers() {
         return $this->hasMany('App\Models\sellers');
     }
-}
+
 }
