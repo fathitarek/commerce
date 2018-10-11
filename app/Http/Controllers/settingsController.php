@@ -146,7 +146,7 @@ class settingsController extends AppBaseController
        // return $similar_sections['image_en'].$image_en ;
         if (gettype($logo) == 'string'){$input['logo'] = $logo;}
         }
-        $settings = $this->settingsRepository->update($inpout, $id);
+        $settings = $this->settingsRepository->update($input, $id);
 
         Flash::success('Settings updated successfully.');
 
