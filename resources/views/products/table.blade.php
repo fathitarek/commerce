@@ -2,9 +2,9 @@
     <thead>
         <tr>
             <th>Name</th>
-        <th>Category Id</th>
+        <th>Category </th>
         <th>Quantity</th>
-        <th>Seller Id</th>
+        <th>Seller</th>
         <th>Price</th>
         <th>Discount</th>
             <th colspan="3">Action</th>
@@ -14,7 +14,7 @@
     @foreach($products as $products)
         <tr>
             <td>{!! $products->name !!}</td>
-            <td>{{ $products->category }}</td>
+            <td>{{ $products->category->name }}</td>
             <td>{!! $products->quantity !!}</td>
             <td>{{ $products->seller }}</td>
             <td>{!! $products->price !!}</td>
