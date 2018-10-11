@@ -79,6 +79,6 @@ class sellers extends Model
     ];
     
     public function product() {
-        return $this->belongsTo('App\Models\products');
+        return $this->hasMany('App\Models\products');
     }
 }
