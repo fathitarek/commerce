@@ -14,9 +14,9 @@
     @foreach($products as $products)
         <tr>
             <td>{!! $products->name !!}</td>
-            <td>{{ $products->category->name }}</td>
+            <td>{{ $products->category }}</td>
             <td>{!! $products->quantity !!}</td>
-            <td>{{ $products->seller->name }}</td>
+            <td>{{ $products->seller }}</td>
             <td>{!! $products->price !!}</td>
             <td>{!! $products->discount !!}</td>
             <td>
