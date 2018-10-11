@@ -16,7 +16,7 @@
             <td>{!! $products->p_name !!}</td>
             <td>{{ $products->category->name }}</td>
             <td>{!! $products->quantity !!}</td>
-            <td>{{ $products->seller }}</td>
+            <td>{{ $products->seller->email }}</td>
             <td>{!! $products->price !!}</td>
             <td>{!! $products->discount !!}</td>
             <td>
