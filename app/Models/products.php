@@ -63,6 +63,6 @@ class products extends Model
         return $this->belongsTo('App\Models\sellers');
     }
 public function category() {
-        return $this->belongsTo('App\Models\sellers');
+        return $this->belongsTo('App\Models\categories');
     }
 }
