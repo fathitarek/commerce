@@ -13,7 +13,7 @@
 <!-- Category Id Field -->
 <div class="form-group">
     {!! Form::label('category_id', 'Category Id:') !!}
-    <p>{!! $products->category_id !!}</p>
+    <p>{!! $products->category->name !!}</p>
 </div>
 
 <!-- Quantity Field -->
@@ -25,7 +25,7 @@
 <!-- Seller Id Field -->
 <div class="form-group">
     {!! Form::label('seller_id', 'Seller Id:') !!}
-    <p>{!! $products->seller_id !!}</p>
+    <p>{!! $products->seller['name'] !!}</p>
 </div>
 
 <!-- Price Field -->
@@ -40,6 +40,16 @@
     <p>{!! $products->discount !!}</p>
 </div>
 
+<!-- city Field -->
+<div class="form-group">
+    {!! Form::label('city', 'City:') !!}
+    <p>{!! $products->city !!}</p>
+</div>
+<!-- publish Field -->
+<div class="form-group">
+    {!! Form::label('publish', 'Publish:') !!}
+    <p>{!! $products->publish !!}</p>
+</div>
 <!-- Created At Field -->
 <div class="form-group">
     {!! Form::label('created_at', 'Created At:') !!}

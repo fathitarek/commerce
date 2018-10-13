@@ -20,6 +20,9 @@ class CreateproductsTable extends Migration
             $table->integer('quantity');
             $table->string('seller_id');
             $table->integer('price');
+
+            $table->integer('publish');
+            $table->string('city');
             $table->integer('discount')->nullable();
             $table->timestamps();
             $table->softDeletes();

@@ -27,4 +27,43 @@ class AppBaseController extends Controller
     {
         return Response::json(ResponseUtil::makeError($error), $code);
     }
+  public  function setCheckbox($record,$field)
+{
+
+    if ($record->get($field) === 'on') {
+//            $record->$field = '1';  // UPDATE:must be true of course
+        $record->offsetSet($field,1);
+    } else {
+//            $record->$field = '0'; // UPDATE:must be false of course
+        $record->offsetSet($field,0);
+    }
+    return $record;
+}
+
+public function updateCheckbox($request,$record,$field)
+{
+    if ($request->get($field) === 'on') {
+        $record->$field = '1';  // UPDATE:must be true of course
+        $request->offsetSet($field,1);
+    } else {
+        $record->$field = '0'; // UPDATE:must be false of course
+        $request->offsetSet($field,0);
+    }
+    return $record;
+}
+
+public function uploadFile($field_name, $destination) {
+        if (!is_null(Input::file($field_name))) {
+            $file = Input::file($field_name)->getClientOriginalName();
+
+            $input[$field_name] = $file;
+
+            $file1 = Input::file($field_name);
+
+            $uploadSuccess = $file1->move($destination, $file);
+            return $file;
+        } else {
+            return false;
+        }
+    }
 }

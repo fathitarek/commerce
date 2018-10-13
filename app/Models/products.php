@@ -33,7 +33,9 @@ class products extends Model
         'quantity',
         'seller_id',
         'price',
-        'discount'
+        'discount',
+        'publish',
+        'city'
     ];
 
     /**
@@ -43,7 +45,9 @@ class products extends Model
      */
     protected $casts = [
         'p_name' => 'string',
-        'category_id' => 'string'
+        'category_id' => 'string',
+        'publish' => 'string',
+        'city' => 'string'
     ];
 
     /**
@@ -56,7 +60,8 @@ class products extends Model
         'category_id' => 'required',
         'quantity' => 'required',
         'seller_id' => 'required',
-        'price' => 'required'
+        'price' => 'required',
+        'city' => 'required'
     ];
 
     public function seller() {

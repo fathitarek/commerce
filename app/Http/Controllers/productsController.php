@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use App\Models\categories;
+use App\Models\sellers;
 
 class productsController extends AppBaseController
 {
@@ -45,7 +47,10 @@ class productsController extends AppBaseController
      */
     public function create()
     {
-        return view('products.create');
+                $categories = categories::latest()->pluck('name','id');
+                $sellers = sellers::latest()->pluck('name','id');
+
+        return view('products.create')->with('categories', $categories)->with('sellers', $sellers);
     }
 
     /**
@@ -57,6 +62,8 @@ class productsController extends AppBaseController
      */
     public function store(CreateproductsRequest $request)
     {
+                $request = $this->setCheckbox($request, 'publish');
+
         $input = $request->all();
 
         $products = $this->productsRepository->create($input);
@@ -96,14 +103,15 @@ class productsController extends AppBaseController
     public function edit($id)
     {
         $products = $this->productsRepository->findWithoutFail($id);
-
+$categories = categories::latest()->pluck('name','id');
+                $sellers = sellers::latest()->pluck('name','id');
         if (empty($products)) {
             Flash::error('Products not found');
 
             return redirect(route('products.index'));
         }
 
-        return view('products.edit')->with('products', $products);
+        return view('products.edit')->with('products', $products)->with('categories', $categories)->with('sellers', $sellers);
     }
 
     /**
@@ -116,6 +124,8 @@ class productsController extends AppBaseController
      */
     public function update($id, UpdateproductsRequest $request)
     {
+                        $request = $this->setCheckbox($request, 'publish');
+
         $products = $this->productsRepository->findWithoutFail($id);
 
         if (empty($products)) {
