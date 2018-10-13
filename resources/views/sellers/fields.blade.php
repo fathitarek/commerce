@@ -41,6 +41,33 @@
     {!! Form::text('description', null, ['class' => 'form-control']) !!}
 </div>
 
+
+<!-- city Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('city', 'City:') !!}
+    {!! Form::text('city', null, ['class' => 'form-control']) !!}
+</div>
+<!-- latitude Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('latitude', 'Latitude:') !!}
+    {!! Form::text('latitude', null, ['class' => 'form-control']) !!}
+</div>
+<!-- languite Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('languite', 'Languite:') !!}
+    {!! Form::text('languite', null, ['class' => 'form-control']) !!}
+</div>
+<!-- active Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('active', 'Active:') !!}
+    {!!Form::checkbox('active',null,false) !!}
+</div><!-- Description Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('logo', 'Logo:') !!}
+    {!! Form::file('logo', null, ['class' => 'form-control']) !!}
+</div>
+
+
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}

@@ -7,6 +7,10 @@
         <th>Super Name</th>
         <th>Address</th>
         <th>Description</th>
+                <th>Active</th>
+        <th>City</th>
+        <th>Logo</th>
+
             <th colspan="3">Action</th>
         </tr>
     </thead>
@@ -19,6 +23,10 @@
             <td>{!! $sellers->super_name !!}</td>
             <td>{!! $sellers->address !!}</td>
             <td>{!! $sellers->description !!}</td>
+            <td>{!! $sellers->active !!}</td>
+            <td>{!! $sellers->city !!}</td>
+             <td>{!!$sellers->logo ? '<img src="/public/images/sellers/'.$sellers->logo.'" height="40"/>':''!!}</td>
+
             <td>
                 {!! Form::open(['route' => ['sellers.destroy', $sellers->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use File;
+use Illuminate\Support\Facades\Input;
 
 class sellersController extends AppBaseController
 {
@@ -57,8 +59,17 @@ class sellersController extends AppBaseController
      */
     public function store(CreatesellersRequest $request)
     {
-        $input = $request->all();
+         $destination = public_path() . '/images/sellers/'; // upload path
+                $request = $this->setCheckbox($request, 'active');
 
+        $input = $request->all();
+         $input['token']=md5(rand() . time());
+
+if(!is_null(Input::file('logo'))){
+        $logo = $this->uploadFile('logo', $destination);
+       // return $similar_sections['image_en'].$image_en ;
+        if (gettype($logo) == 'string'){$input['logo'] = $logo;}
+        }
         $sellers = $this->sellersRepository->create($input);
 
         Flash::success('Sellers saved successfully.');
@@ -116,6 +127,8 @@ class sellersController extends AppBaseController
      */
     public function update($id, UpdatesellersRequest $request)
     {
+                        $destination = public_path() . '/images/sellers/'; // upload path
+
         $sellers = $this->sellersRepository->findWithoutFail($id);
 
         if (empty($sellers)) {
@@ -123,8 +136,14 @@ class sellersController extends AppBaseController
 
             return redirect(route('sellers.index'));
         }
+ $input = $request->all();
 
-        $sellers = $this->sellersRepository->update($request->all(), $id);
+ if(!is_null(Input::file('logo'))){
+        $logo = $this->uploadFile('logo', $destination);
+       // return $similar_sections['image_en'].$image_en ;
+        if (gettype($logo) == 'string'){$input['logo'] = $logo;}
+        }
+        $sellers = $this->sellersRepository->update($input, $id);
 
         Flash::success('Sellers updated successfully.');
 

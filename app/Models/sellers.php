@@ -37,7 +37,12 @@ class sellers extends Model
         'token',
         'super_name',
         'address',
-        'description'
+        'description',
+        'active',
+        'logo',
+        'city',
+        'latitude',
+        'languite'
     ];
 
     /**
@@ -53,7 +58,12 @@ class sellers extends Model
         'token' => 'string',
         'super_name' => 'string',
         'address' => 'string',
-        'description' => 'string'
+        'description' => 'string',
+        'active'=> 'string',
+        'logo'=> 'text',
+        'city'=> 'string',
+        'latitude'=> 'string',
+        'languite'=> 'string'
     ];
 
     /**
@@ -67,6 +77,11 @@ class sellers extends Model
         'password' => 'required',
         //'token' => 'required',
         'super_name' => 'required'*/
+         'active'=> 'required',
+        'logo'=> 'required|mimes:jpeg,png',
+        'city'=> 'required',
+        'latitude'=> 'required',
+        'languite'=> 'required'
     ];
 
  /**
