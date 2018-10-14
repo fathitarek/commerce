@@ -25,7 +25,8 @@ class productsRepository extends BaseRepository
         'quantity',
         'seller_id',
         'price',
-        'discount'
+        'discount',
+        'publish'
     ];
 
     /**

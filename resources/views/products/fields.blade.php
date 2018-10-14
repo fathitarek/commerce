@@ -35,12 +35,27 @@
     {!! Form::number('discount', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Logo Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('images_products', 'Logo:') !!}
+    {!! Form::file('images_products[]', null, ['class' => 'form-control']) !!}
+</div>
+<!-- Logo Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('images_products', 'Logo:') !!}
+    {!! Form::file('images_products[]', null, ['class' => 'form-control']) !!}
+</div>
+<!-- Logo Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('images_products', 'Logo:') !!}
+    {!! Form::file('images_products[]', null, ['class' => 'form-control']) !!}
+</div>
+<!-- Logo Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('images_products', 'Logo:') !!}
+    {!! Form::file('images_products[]', null, ['class' => 'form-control']) !!}
+</div>
 
-<!-- city Field -->
-<!-- <div class="form-group col-sm-6">
-    {!! Form::label('city', 'city:') !!}
-    {!! Form::text('city', null, ['class' => 'form-control']) !!}
-</div> -->
 
 <div class="form-group col-sm-6">
     {!!Form::label('publish','Publish: ')!!}
