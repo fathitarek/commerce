@@ -7,7 +7,7 @@
         <th>Seller</th>
         <th>Price</th>
         <th>Discount</th>
-        <th>City</th>
+        <!-- <th>City</th> -->
         <th>Publish</th>
             <th colspan="3">Action</th>
         </tr>
@@ -21,7 +21,7 @@
             <td>{{ $products->seller['name'] }}</td>
             <td>{!! $products->price !!}</td>
             <td>{!! $products->discount !!}</td>
-            <td>{!! $products->city !!}</td>
+            <!-- <td>{!! $products->city !!}</td> -->
             <td>{!! $products->publish !!}</td>
             <td>
                 {!! Form::open(['route' => ['products.destroy', $products->id], 'method' => 'delete']) !!}

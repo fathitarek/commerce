@@ -37,10 +37,10 @@
 
 
 <!-- city Field -->
-<div class="form-group col-sm-6">
+<!-- <div class="form-group col-sm-6">
     {!! Form::label('city', 'city:') !!}
     {!! Form::text('city', null, ['class' => 'form-control']) !!}
-</div>
+</div> -->
 
 <div class="form-group col-sm-6">
     {!!Form::label('publish','Publish: ')!!}

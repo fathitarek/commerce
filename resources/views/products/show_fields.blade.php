@@ -41,11 +41,11 @@
 </div>
 
 <!-- city Field -->
-<div class="form-group">
+<!-- <div class="form-group">
     {!! Form::label('city', 'City:') !!}
     <p>{!! $products->city !!}</p>
 </div>
-<!-- publish Field -->
+ --><!-- publish Field -->
 <div class="form-group">
     {!! Form::label('publish', 'Publish:') !!}
     <p>{!! $products->publish !!}</p>

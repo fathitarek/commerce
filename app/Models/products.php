@@ -35,7 +35,7 @@ class products extends Model
         'price',
         'discount',
         'publish',
-        'city'
+        //'city'
     ];
 
     /**
@@ -47,7 +47,7 @@ class products extends Model
         'p_name' => 'string',
         'category_id' => 'string',
         'publish' => 'string',
-        'city' => 'string'
+        //'city' => 'string'
     ];
 
     /**
@@ -61,7 +61,7 @@ class products extends Model
         'quantity' => 'required',
         'seller_id' => 'required',
         'price' => 'required',
-        'city' => 'required'
+        //'city' => 'required'
     ];
 
     public function seller() {
