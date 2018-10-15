@@ -39,7 +39,7 @@ class productsController extends AppBaseController
         $this->productsRepository->pushCriteria(new RequestCriteria($request));
         $products = $this->productsRepository->all();
         foreach ($products as $product) {
-                $product->images_product = images_products::where('id', $product->id)->first();
+                $product->images_product = images_products::where('product_id', $product->id)->first();
 
         }
 // dd($products);
