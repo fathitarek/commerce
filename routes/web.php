@@ -36,6 +36,7 @@ Route::resource('buyers', 'buyersController');
 
 Route::resource('sellers', 'sellersController');
 
+Route::post('products/search', 'productsController@search');
 Route::resource('products', 'productsController');
 
 Route::resource('stories', 'storiesController');

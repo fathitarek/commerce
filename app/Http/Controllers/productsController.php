@@ -15,6 +15,7 @@ use App\Models\sellers;
 use DB;
 use App\Models\images_products;
 use Illuminate\Support\Facades\Input;
+use App\Models\products;
 
 class productsController extends AppBaseController
 {
@@ -27,6 +28,28 @@ class productsController extends AppBaseController
                 $this->middleware('auth');
 
     }
+    public function search(Request $request){
+        
+$products = DB::table('products')->where('p_name','like', '%' . $request->p_name . '%')
+->where('quantity','like', '%' . $request->quantity . '%')
+->where('price','like', '%' . $request->price . '%')
+->where('discount','like', '%' . $request->discount . '%')
+->where('publish','like', '%' . $request->publish . '%')
+->paginate(1);
+
+
+ foreach ($products as $product) {
+                $product->images_product = images_products::where('product_id', $product->id)->first();
+
+        }
+         $count_products = products::count();
+// dd($products);
+
+        return view('products.index')
+            ->with('products', $products)->with('count_products',$count_products);
+    }
+
+
 
     /**
      * Display a listing of the products.
@@ -37,14 +60,17 @@ class productsController extends AppBaseController
     public function index(Request $request)
     {
         $this->productsRepository->pushCriteria(new RequestCriteria($request));
-        $products = $this->productsRepository->all();
+       // $products = $this->productsRepository->all();
+        $products=products::latest()->paginate(1);
         foreach ($products as $product) {
                 $product->images_product = images_products::where('product_id', $product->id)->first();
 
         }
 // dd($products);
+             $count_products = products::count();
+
         return view('products.index')
-            ->with('products', $products);
+            ->with('products', $products)->with('count_products',$count_products);
     }
 
     /**
