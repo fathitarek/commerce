@@ -1,6 +1,7 @@
 <table class="table table-responsive" id="products-table">
     <thead>
         <tr>
+        <th>ID</th>
         <th>Image</th>
         <th>Name</th>
         <th>Category </th>
@@ -14,8 +15,11 @@
         </tr>
     </thead>
     <tbody>
+        <?php $i=0; ?>
     @foreach($products as $products)
+
         <tr>
+            <td>{!!$i++ !!}</td>
             <td>{!!$products->images_product->image_url ? '<img src="/public/images/products/'.$products->images_product->image_url.'" height="40"/>':''!!}</td>
             <td>{!! $products->p_name !!}</td>
             <td>{{ $products->category->name }}</td>
