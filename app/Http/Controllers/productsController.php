@@ -42,7 +42,7 @@ class productsController extends AppBaseController
                 $product->images_product = images_products::where('id', $product->id)->first();
 
         }
-dd($products);
+// dd($products);
         return view('products.index')
             ->with('products', $products);
     }

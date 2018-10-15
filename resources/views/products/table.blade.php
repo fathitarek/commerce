@@ -1,7 +1,8 @@
 <table class="table table-responsive" id="products-table">
     <thead>
         <tr>
-            <th>Name</th>
+        <th>Image</th>
+        <th>Name</th>
         <th>Category </th>
         <th>Quantity</th>
         <th>Seller</th>
@@ -15,6 +16,7 @@
     <tbody>
     @foreach($products as $products)
         <tr>
+            <td>{!!$products->images_product->image_url ? '<img src="/public/images/products/'.$products->images_product->image_url.'" height="40"/>':''!!}</td>
             <td>{!! $products->p_name !!}</td>
             <td>{{ $products->category->name }}</td>
             <td>{!! $products->quantity !!}</td>
