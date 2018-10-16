@@ -52,7 +52,7 @@ echo gettype( $numpage);?>
 
                 <?php 
                 if ($numpage>1) {
-                   echo $index+$numpage-1;
+                   echo 5+$numpage-1;
                 }else{
                     echo ++$index ; 
                 }
