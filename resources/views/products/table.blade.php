@@ -41,7 +41,7 @@
        {!! Form::close() !!}
         </tr>
 
-<?php  echo gettype($_GET['page']);?>
+<?php  echo (int)$_GET['page'];?>
         
     @foreach($products as $index=>$product)
 
