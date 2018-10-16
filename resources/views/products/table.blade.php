@@ -43,10 +43,10 @@
 
 
         <?php $i=1; ?>
-    @foreach($products as $product)
+    @foreach($products as $index=>$product)
 
         <tr>
-            <td>{!!$i++ !!}</td>
+            <td>{!!$index !!}</td>
             <td>{!!$product->images_product['image_url'] ? '<img src="/public/images/products/'.$product->images_product['image_url'].'" height="40"/>':''!!}</td>
             <td>{!! $product->p_name !!}</td>
             <td>{{ $product->category->name }}</td>
@@ -66,6 +66,7 @@
             </td>
         </tr>
     @endforeach
+    {{$i}}
     </tbody>
 </table>
 {{$products->render()}}
