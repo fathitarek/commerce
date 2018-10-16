@@ -62,7 +62,7 @@ $products = DB::table('products')->where('p_name','like', '%' . $request->p_name
     {
         $this->productsRepository->pushCriteria(new RequestCriteria($request));
        // $products = $this->productsRepository->all();
-        $products=products::latest()->paginate(1);
+        $products=products::latest()->paginate(5);
         foreach ($products as $product) {
                 $product->images_product = images_products::where('product_id', $product->id)->first();
 
