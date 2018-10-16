@@ -172,15 +172,17 @@ $i=0;
     public function edit($id)
     {
         $products = $this->productsRepository->findWithoutFail($id);
-$categories = categories::latest()->pluck('name','id');
-                $sellers = sellers::latest()->pluck('name','id');
+        $categories = categories::latest()->pluck('name','id');
+        $sellers = sellers::latest()->pluck('name','id');
+        $status_order = status_order::latest()->pluck('name','id');
+
         if (empty($products)) {
             Flash::error('Products not found');
 
             return redirect(route('products.index'));
         }
 
-        return view('products.edit')->with('products', $products)->with('categories', $categories)->with('sellers', $sellers);
+        return view('products.edit')->with('products', $products)->with('categories', $categories)->with('sellers', $sellers)>with('status_order',$status_order);
     }
 
     /**
