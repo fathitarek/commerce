@@ -41,26 +41,21 @@
        {!! Form::close() !!}
         </tr>
 
-<?php  $numpage= (int)$_GET['page'];
-
-echo gettype( $numpage);
+<?php 
+     $numpage= (int)$_GET['page'];
       $sum = 5+$numpage-1;
       ?>
     @foreach($products as $index=>$product)
 
         <tr>
             <td>
-
                 <?php 
                 if ($numpage>1) {
                    echo $sum++;
                 }else{
                     echo ++$index ; 
                 }
-
-                ?>
-                    
-
+                ?>                   
                 </td>
             <td>{!!$product->images_product['image_url'] ? '<img src="/public/images/products/'.$product->images_product['image_url'].'" height="40"/>':''!!}</td>
             <td>{!! $product->p_name !!}</td>
