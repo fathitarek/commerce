@@ -39,7 +39,7 @@
 <!-- Discount Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('discount', 'Discount($):') !!}
-    {!! Form::number('discount', null, ['class' => 'form-control']) !!}
+    {!! Form::text('discount', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Discount Field -->
