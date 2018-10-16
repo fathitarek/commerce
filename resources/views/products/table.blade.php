@@ -46,7 +46,7 @@
     @foreach($products as $index=>$product)
 
         <tr>
-            <td><?php echo (++$index) + (--$_GET['page']); ?></td>
+            <td><?php echo (++$index) + (--(int)$_GET['page']); ?></td>
             <td>{!!$product->images_product['image_url'] ? '<img src="/public/images/products/'.$product->images_product['image_url'].'" height="40"/>':''!!}</td>
             <td>{!! $product->p_name !!}</td>
             <td>{{ $product->category->name }}</td>
