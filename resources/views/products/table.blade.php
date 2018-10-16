@@ -53,7 +53,7 @@
             <td>{!! $product->quantity !!}</td>
             <td>{{ $product->seller['name'] }}</td>
             <td>{!! $product->price !!}</td>
-            <td>{!! $product->status_order->name !!}</td>
+            <td>{{ $product->status_order['name'] }}</td>
             <td>{!! $product->publish !!}</td>
             <td>
                 {!! Form::open(['route' => ['products.destroy', $product->id], 'method' => 'delete']) !!}
