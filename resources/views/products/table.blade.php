@@ -69,7 +69,7 @@
     </tbody>
 </table>
 {{$products->render()}}
-<span id="numOfProducts"> </span>/{{$count_products}}
+<!-- <span id="numOfProducts"> </span>/{{$count_products}} -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script type="text/javascript">
