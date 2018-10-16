@@ -42,6 +42,11 @@
     {!! Form::number('discount', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Discount Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('description', 'Description:') !!}
+    {!! Form::number('description', null, ['class' => 'form-control']) !!}
+</div> 
 <!-- Logo Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('images_products', 'Images:') !!}

@@ -35,7 +35,8 @@ class products extends Model
         'price',
         'discount',
         'publish',
-        'status_order_id'
+        'status_order_id',
+        'description'
     ];
 
     /**
@@ -48,6 +49,7 @@ class products extends Model
         'category_id' => 'string',
         'publish' => 'string',
         'status_order_id' => 'string',
+        'description'=> 'string'
     ];
 
     /**
@@ -62,6 +64,7 @@ class products extends Model
         'seller_id' => 'required',
         'price' => 'required',
         'status_order_id'=> 'required',
+        'description'=> 'required'
     ];
 
     public function seller() {

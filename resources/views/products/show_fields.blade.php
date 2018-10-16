@@ -40,6 +40,11 @@
     <p>{!! $products->discount !!}</p> -->
 </div>
 
+<div class="form-group">
+    {!! Form::label('description', 'Description:') !!}
+    <p>{!! $products->description !!}</p>
+</div>
+
 <!-- city Field -->
 <!-- <div class="form-group">
     {!! Form::label('city', 'City:') !!}
