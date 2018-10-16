@@ -182,7 +182,7 @@ $i=0;
             return redirect(route('products.index'));
         }
 
-        return view('products.edit')->with('products', $products)->with('categories', $categories)->with('sellers', $sellers)>with('status_order',$status_order);
+        return view('products.edit')->with('products', $products)->with('categories', $categories)->with('sellers', $sellers)->with('status_order',$status_order);
     }
 
     /**
