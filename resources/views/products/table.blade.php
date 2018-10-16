@@ -41,7 +41,7 @@
        {!! Form::close() !!}
         </tr>
 
-
+<?php echo $_GET['page'];?>
         
     @foreach($products as $index=>$product)
 
