@@ -43,8 +43,9 @@
 
 <?php  $numpage= (int)$_GET['page'];
 
-echo gettype( $numpage);?>
-        
+echo gettype( $numpage);
+      $sum = 5+$numpage-1;
+      ?>
     @foreach($products as $index=>$product)
 
         <tr>
@@ -52,7 +53,7 @@ echo gettype( $numpage);?>
 
                 <?php 
                 if ($numpage>1) {
-                   echo 5+$numpage-1;
+                   echo $sum++;
                 }else{
                     echo ++$index ; 
                 }
