@@ -16,7 +16,7 @@
         <th>Category </th>
         <th>Quantity</th>
         <th>Seller</th>
-        <th>Price</th>
+        <th>Price($)</th>
         <th>Status</th>
         <!-- <th>City</th> -->
         <th>Publish</th>

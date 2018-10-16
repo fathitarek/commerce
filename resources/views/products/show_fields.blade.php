@@ -30,14 +30,14 @@
 
 <!-- Price Field -->
 <div class="form-group">
-    {!! Form::label('price', 'Price:') !!}
+    {!! Form::label('price', 'Price($):') !!}
     <p>{!! $products->price !!}</p>
 </div>
 
 <!-- Discount Field -->
 <div class="form-group">
-    {!! Form::label('discount', 'Discount:') !!}
-    <p>{!! $products->discount !!}</p>
+   <!--  {!! Form::label('discount', 'Discount ($):') !!}
+    <p>{!! $products->discount !!}</p> -->
 </div>
 
 <!-- city Field -->

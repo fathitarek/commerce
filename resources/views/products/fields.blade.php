@@ -32,13 +32,13 @@
 
 <!-- Price Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('price', 'Price:') !!}
+    {!! Form::label('price', 'Price($):') !!}
     {!! Form::number('price', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Discount Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('discount', 'Discount:') !!}
+    {!! Form::label('discount', 'Discount($):') !!}
     {!! Form::number('discount', null, ['class' => 'form-control']) !!}
 </div>
 
