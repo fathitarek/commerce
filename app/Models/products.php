@@ -67,4 +67,8 @@ class products extends Model
 public function category() {
         return $this->belongsTo('App\Models\categories');
     }
+    public function status_order() {
+        return $this->belongsTo('App\Models\status_order');
+    }
+    
 }

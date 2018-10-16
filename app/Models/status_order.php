@@ -44,5 +44,7 @@ class status_order extends Model
         'name' => 'required'
     ];
 
-    
+   public function products() {
+        return $this->hasMany('App\Models\products');
+    }  
 }

@@ -14,6 +14,7 @@ use App\Models\categories;
 use App\Models\sellers;
 use DB;
 use App\Models\images_products;
+use App\Models\status_order;
 use Illuminate\Support\Facades\Input;
 use App\Models\products;
 
@@ -82,8 +83,9 @@ $products = DB::table('products')->where('p_name','like', '%' . $request->p_name
     {
                 $categories = categories::latest()->pluck('name','id');
                 $sellers = sellers::latest()->pluck('name','id');
+                $status_order = status_order::latest()->pluck('name','id');
 
-        return view('products.create')->with('categories', $categories)->with('sellers', $sellers);
+        return view('products.create')->with('categories', $categories)->with('sellers', $sellers)->with('status_order',$status_order);
     }
 
     /**

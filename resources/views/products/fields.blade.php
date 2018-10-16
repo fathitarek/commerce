@@ -23,6 +23,13 @@
        {{ Form::select('seller_id',$sellers,null,['placeholder' => 'Select Seller...','class'=> '','id'=>'seller_id'],['option'=>'Please Select Seller','class' => 'form-control']) }}
 </div>
 
+
+<!-- status_order_id Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('status_order_id', 'Seller:') !!}
+       {{ Form::select('status_order_id',$status_order,null,['placeholder' => 'Select status_order...','class'=> '','id'=>'status_order_id'],['option'=>'Please Select status_order','class' => 'form-control']) }}
+</div>
+
 <!-- Price Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('price', 'Price:') !!}
@@ -37,22 +44,22 @@
 
 <!-- Logo Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('images_products', 'Logo:') !!}
+    {!! Form::label('images_products', 'Images:') !!}
     {!! Form::file('images_products[]', null, ['class' => 'form-control']) !!}
 </div>
 <!-- Logo Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('images_products', 'Logo:') !!}
+    {!! Form::label('images_products', 'Images:') !!}
     {!! Form::file('images_products[]', null, ['class' => 'form-control']) !!}
 </div>
 <!-- Logo Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('images_products', 'Logo:') !!}
+    {!! Form::label('images_products', 'Images:') !!}
     {!! Form::file('images_products[]', null, ['class' => 'form-control']) !!}
 </div>
 <!-- Logo Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('images_products', 'Logo:') !!}
+    {!! Form::label('images_products', 'Images:') !!}
     {!! Form::file('images_products[]', null, ['class' => 'form-control']) !!}
 </div>
 
