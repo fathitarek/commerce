@@ -103,39 +103,17 @@ $products = DB::table('products')->where('p_name','like', '%' . $request->p_name
        
         $products = $this->productsRepository->create($input);
 
-
-// for ($i = 1; $i<=count(Input::get('images_products'));$i++){
-//                 $logo = $this->uploadFile('images_products[]', $destination);
-//                 $imageName = $name.'.'.$request->product[$i]['image']->getClientOriginalExtension();;
-//                 $request->product[$i]['image']->move(public_path('images/food/'), $imageName);
-
-// }
-
 $i=0;
             foreach ($input['images_products'] as  $image) {
                 $name=$image->getClientOriginalName();
                 $image->move($destination, $name);  
-                //$data[] = $name;  
 
-//                 $logo = $this->uploadFile('images_productss', $destination);
-//         if (gettype($logo) == 'string'){$value = $logo;}
 
                  DB::table('images_products')->insert(
                       ['image_url' => $name, 'product_id' => $products->id]
- );
-// $i++;
-                }
+                    );
 
-//                // $images_products = new images_products;
-//                // $images_products->image=
-//                //dd($value);
-//             }
-       //      if(!is_null(Input::file('logo'))){
-       //  $logo = $this->uploadFile('logo', $destination);
-       // // return $similar_sections['image_en'].$image_en ;
-       //  if (gettype($logo) == 'string'){$input['logo'] = $logo;}
-       //  }
-       // dd($input);
+            }
         Flash::success('Products saved successfully.');
 
         return redirect(route('products.index'));
@@ -175,14 +153,15 @@ $i=0;
         $categories = categories::latest()->pluck('name','id');
         $sellers = sellers::latest()->pluck('name','id');
         $status_order = status_order::latest()->pluck('name','id');
-
+        $images_products =images_products::where('product_id',$id)->pluck('image_url','id');
+// dd($images_products);
         if (empty($products)) {
             Flash::error('Products not found');
 
             return redirect(route('products.index'));
         }
 
-        return view('products.edit')->with('products', $products)->with('categories', $categories)->with('sellers', $sellers)->with('status_order',$status_order);
+        return view('products.edit')->with('products', $products)->with('categories', $categories)->with('sellers', $sellers)->with('status_order',$status_order)->with('images_products',$images_products);
     }
 
     /**
@@ -196,7 +175,10 @@ $i=0;
     public function update($id, UpdateproductsRequest $request)
     {
                         $request = $this->setCheckbox($request, 'publish');
+                        $destination = public_path() . '/images/products/'; // upload path
 
+        $images_products =images_products::where('product_id',$id)->get();
+        // return $images_products[0]->id;
         $products = $this->productsRepository->findWithoutFail($id);
 
         if (empty($products)) {
@@ -206,6 +188,31 @@ $i=0;
         }
 
         $products = $this->productsRepository->update($request->all(), $id);
+
+
+ //$input = $request->all();
+foreach ($request->images_products as  $index=> $image) {
+    if (isset($image)) {
+       echo $images_products[$index]->id;
+           echo $index .'=>'.$image;
+//$filename = date('Y-m-d-H:i:s')."-".$image->getClientOriginalName();
+
+$name=$image->getClientOriginalName();
+                $image->move($destination, $name);  
+
+           DB::table('images_products') ->where('id',$images_products[$index]->id)
+            ->update(['image_url' => $name]);
+
+    }
+}
+                // $name=$image->getClientOriginalName();
+                // $image->move($destination, $name);  
+
+
+                //  
+
+    
+// dd();
 
         Flash::success('Products updated successfully.');
 
