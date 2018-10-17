@@ -42,9 +42,12 @@
         </tr>
 
 <?php 
+if(isset($_GET['page'])){
      $numpage= (int)$_GET['page'];
       $sum = 5+$numpage-1;
+  }else{$numpage=0;}
       ?>
+  }
     @foreach($products as $index=>$product)
 
         <tr>
