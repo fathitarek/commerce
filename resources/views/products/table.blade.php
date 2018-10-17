@@ -47,7 +47,7 @@ if(isset($_GET['page'])){
       $sum = 5+$numpage-1;
   }else{$numpage=0;}
       ?>
-  }
+  
     @foreach($products as $index=>$product)
 
         <tr>
