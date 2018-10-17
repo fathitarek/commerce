@@ -193,8 +193,8 @@ $i=0;
  //$input = $request->all();
 foreach ($request->images_products as  $index=> $image) {
     if (isset($image)) {
-       echo $images_products[$index]->id;
-           echo $index .'=>'.$image;
+      // echo $images_products[$index]->id;
+         //  echo $index .'=>'.$image;
 //$filename = date('Y-m-d-H:i:s')."-".$image->getClientOriginalName();
 
 $name=$image->getClientOriginalName();
