@@ -26,8 +26,8 @@
 
 <!-- status_order_id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('status_order_id', 'Seller:') !!}
-       {{ Form::select('status_order_id',$status_order,null,['placeholder' => 'Select status_order...','class'=> '','id'=>'status_order_id'],['option'=>'Please Select status_order','class' => 'form-control']) }}
+    {!! Form::label('status_order_id', 'Please Select Status Order:') !!}
+       {{ Form::select('status_order_id',$status_order,null,['placeholder' => 'Select status_order...','class'=> '','id'=>'status_order_id'],['option'=>'Please Select Status Order','class' => 'form-control']) }}
 </div>
 
 <!-- Price Field -->
