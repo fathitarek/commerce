@@ -67,7 +67,12 @@ if(isset($_GET['page'])){
             <td>{{ $product->seller['name'] }}</td>
             <td>{!! $product->price !!}</td>
             <td>{{ $product->status_order['name'] }}</td>
-            <td>{!! $product->publish !!}</td>
+            <td>@if($product->publish==1)
+                 <span class="glyphicon glyphicon-ok"></span>
+@else
+<span class="glyphicon glyphicon-remove"></span>
+@endif
+            </td>
             <td>
                 {!! Form::open(['route' => ['products.destroy', $product->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
