@@ -30,15 +30,25 @@ class productsController extends AppBaseController
 
     }
     public function search(Request $request){
-        
-$products = DB::table('products')->where('p_name','like', '%' . $request->p_name . '%')
-->where('quantity','like', '%' . $request->quantity . '%')
+        $id_category=array();
+        $id_seller=array();
+        $categories=  DB::table('categories')->where('name','like', '%' . $request->category_name . '%')->select('id')->get();
+        $sellers=  DB::table('sellers')->where('name','like', '%' . $request->seller_name . '%')->select('id')->get();
+     foreach ($categories as  $value) {
+         array_push($id_category, $value->id);
+     }
+     foreach ($sellers as  $value) {
+         array_push($id_seller, $value->id);
+     }
+    //  dd($id_category);
+$products = products::where('p_name','like', '%' . $request->p_name . '%')
 ->where('price','like', '%' . $request->price . '%')
-->where('discount','like', '%' . $request->discount . '%')
 ->where('publish','like', '%' . $request->publish . '%')
-->paginate(1);
+->whereIn('category_id', $id_category)
+->whereIn('seller_id', $id_seller)
+->paginate(5);
 
-
+ // dd($products);
  foreach ($products as $product) {
                 $product->images_product = images_products::where('product_id', $product->id)->first();
 

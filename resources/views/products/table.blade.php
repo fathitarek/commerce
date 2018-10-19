@@ -14,10 +14,9 @@
         <th>Image</th>
         <th>Name</th>
         <th>Category </th>
-        <th>Quantity</th>
         <th>Seller</th>
         <th>Price($)</th>
-        <th>Status</th>
+        <!-- <th>Status</th> -->
         <!-- <th>City</th> -->
         <th>Publish</th>
             <th colspan="3">Action</th>
@@ -31,12 +30,17 @@
         <td><!-- <input type="" name="" style="width: 25px;"> --></td>
        <td></td>
        <td><input type="text" name="p_name" style="width: 70px;"></td>
-       <td><input type="text" name="category" style="width: 70px;"></td>
-       <td><input type="text" name="quantity" style="width: 70px;"></td>
-        <td><input type="text" name="seller" style="width: 70px;"></td>
+       <td><input type="text" name="category_name" style="width: 70px;"></td>
+        <td><input type="text" name="seller_name" style="width: 70px;"></td>
         <td><input type="text" name="price" style="width: 70px;"></td>
-        <td><input type="text" name="discount" style="width: 70px;"></td>
-       <td><input type="text" name="publish" style="width: 70px;"></td>
+        <td><!--<input type="text" name="publish" style="width: 70px;"> -->
+
+<select name="publish" style="width: 70px;">
+  <option value=""></option>
+  <option value="1">Publish</option>
+  <option value="0">Not Publish</option>
+</select>
+       </td>
      <td><input type="submit" class="btn btn-primary" value="press" name="" style="width: 70px;"></td>
        {!! Form::close() !!}
         </tr>
@@ -47,7 +51,7 @@ if(isset($_GET['page'])){
       $sum = 5+$numpage-1;
   }else{$numpage=0;}
       ?>
-  
+  @if(count($products))
     @foreach($products as $index=>$product)
 
         <tr>
@@ -63,10 +67,8 @@ if(isset($_GET['page'])){
             <td>{!!$product->images_product['image_url'] ? '<img src="/public/images/products/'.$product->images_product['image_url'].'" height="40"/>':''!!}</td>
             <td>{!! $product->p_name !!}</td>
             <td>{{ $product->category->name }}</td>
-            <td>{!! $product->quantity !!}</td>
             <td>{{ $product->seller['name'] }}</td>
             <td>{!! $product->price !!}</td>
-            <td>{{ $product->status_order['name'] }}</td>
             <td>@if($product->publish==1)
                  <span class="glyphicon glyphicon-ok"></span>
 @else
@@ -84,7 +86,8 @@ if(isset($_GET['page'])){
             </td>
         </tr>
     @endforeach
-   
+   @else <h1> Not Found </h1>
+   @endif
     </tbody>
 </table>
 {{$products->render()}}
