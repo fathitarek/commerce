@@ -23,7 +23,7 @@ Route::get('/home', 'HomeController@index');
 
 
 
-
+Route::group(['prefix' => 'Admin'], function() {
 Route::resource('categories', 'categoriesController');
 //Auth::routes();
 
@@ -42,3 +42,4 @@ Route::resource('products', 'productsController');
 Route::resource('stories', 'storiesController');
 
 Route::resource('settings', 'settingsController');
+});
