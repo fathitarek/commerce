@@ -11,14 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('front.index');
+// });
 
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/', 'IndexFrontController@indexRender');
 
 
 

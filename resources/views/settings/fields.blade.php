@@ -20,6 +20,23 @@
 <div class="form-group col-sm-6">
     {!! Form::label('logo', 'Logo:') !!}
     {!! Form::file('logo', null, ['class' => 'form-control']) !!}
+    
+</div>
+
+<!-- fb_link Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('fb_link', 'fb_link:') !!}
+    {!! Form::text('fb_link', null, ['class' => 'form-control']) !!}
+</div>
+<!-- instgram_link Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('instgram_link', 'instgram_link:') !!}
+    {!! Form::text('instgram_link', null, ['class' => 'form-control']) !!}
+</div>
+<!-- twitter_link Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('twitter_link', 'twitter_link:') !!}
+    {!! Form::text('twitter_link', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

@@ -29,7 +29,10 @@ class settings extends Model
         'email',
         'location',
         'telephone',
-        'logo'
+        'logo',
+        'fb_link',
+        'instgram_link',
+        'twitter_link',
     ];
 
     /**
@@ -41,7 +44,10 @@ class settings extends Model
         'email' => 'string',
         'location' => 'string',
         'telephone' => 'string',
-        'logo' => 'string'
+        'logo' => 'string',
+        'fb_link'=> 'string',
+        'instgram_link'=> 'string',
+        'twitter_link'=> 'string',
     ];
 
     /**
@@ -53,7 +59,10 @@ class settings extends Model
         'email' => 'required',
         'location' => 'required',
         'telephone' => 'required',
-        'logo' => 'required|mimes:jpeg,png'
+        'logo' => 'required|mimes:jpeg,png',
+         'fb_link'=> 'required',
+        'instgram_link'=> 'required',
+        'twitter_link'=> 'required',
     ];
 
     
