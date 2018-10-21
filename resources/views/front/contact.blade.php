@@ -21,7 +21,7 @@
                 </div><!--/.col-->
                 <div class="col-md-6">
                     <div class="contact-form">
-                        <form class="form-horizontal" action="/fat" method="POST">
+                        <form class="form-horizontal" action="/public/fat" method="POST">
                         	{{csrf_field()}}
                             <input type="text" name="name" class="form-control" autocomplete="off" placeholder="name" required>
                             <input type="text" name="phone" class="form-control" autocomplete="off" placeholder="phono" required>
