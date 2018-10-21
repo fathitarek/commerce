@@ -22,7 +22,7 @@ Auth::routes();
 
 Route::get('/', 'IndexFrontController@indexRender');
 Route::get('/stories', 'StoriesFrontController@storiesRender');
-Route::get('/proudcts', 'ProductsFrontController@productsRender');
+Route::get('/products', 'ProductsFrontController@productsRender');
 Route::get('/contacts', 'ContctsFrontController@contactsRender');
 
 Route::POST('/fat', 'ContctsFrontController@formSections');
