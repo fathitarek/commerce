@@ -44,7 +44,13 @@ class ContctsFrontController  extends Controller
                 'mobile' => 'required',     'message' => 'required',
                 ]);
             */
-           
+           $to = "fathitarek208@gmail.com";
+$subject = "My subject";
+$txt =$request->msg;
+$headers = "From: ".$request->email ;
+
+mail($to,$subject,$txt,$headers);
+
            $data = array(
                       'name'=>$request->name,
                       'email'=>$request->email,
@@ -52,12 +58,12 @@ class ContctsFrontController  extends Controller
                       'bodyMessage'=>$request->msg
               );
            
-              Mail::send('front.formContactMail',$data , function ($message) use ($data)
-              {
-                    $message->from($data['email'], 'new mail');
-                    $message->to('fathitarek208@gmail.com');
-                    $message->subject('Bright App Order');
-              });
+              // Mail::send('front.formContactMail',$data , function ($message) use ($data)
+              // {
+              //       $message->from($data['email'], 'new mail');
+              //       $message->to('fathitarek208@gmail.com');
+              //       $message->subject('Bright App Order');
+              // });
               // return redirect('front.contact')->with('message', ' تم ارسال رسالتك بنجاح ');
               return $this->contactsRender();
         }
