@@ -8,7 +8,7 @@ use App\Models\images_products;
 use App\Models\products;
 use App\Models\settings;
 use App\Models\stories;
-
+use Mail;
 class ContctsFrontController  extends Controller
 {
     /**
@@ -34,8 +34,33 @@ class ContctsFrontController  extends Controller
        return $settings;
     }
 
-     public function formSections(){
-      
-    }
+  
+     
+       public function formSections(Request $request){
+          
+            /*
+                $this->validate($request, [
+                'subject' => 'required',    'email' => 'required',
+                'mobile' => 'required',     'message' => 'required',
+                ]);
+            */
+           
+           $data = array(
+                      'name'=>$request->name,
+                      'email'=>$request->email,
+                      'phone'=>$request->phone,
+                      'bodyMessage'=>$request->msg
+              );
+           
+              Mail::send('front.formContactMail',$data , function ($message) use ($data)
+              {
+                    $message->from($data['email'], 'new mail');
+                    $message->to('fathitarek208@gmail.com');
+                    $message->subject('Bright App Order');
+              });
+              // return redirect('front.contact')->with('message', ' تم ارسال رسالتك بنجاح ');
+              return $this->contactsRender();
+        }
+
 
   }

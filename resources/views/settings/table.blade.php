@@ -2,7 +2,7 @@
     <thead>
         <tr>
             <th>Email</th>
-        <th>Location</th>
+        <th>Address</th>
         <th>Telephone</th>
         <th>Logo</th>
             <th colspan="3">Action</th>
@@ -12,7 +12,7 @@
     @foreach($settings as $settings)
         <tr>
             <td>{!! $settings->email !!}</td>
-            <td>{!! $settings->location !!}</td>
+            <td>{!! $settings->address !!}</td>
             <td>{!! $settings->telephone !!}</td>
                            <td>{!!$settings->logo ? '<img src="/public/images/settings/'.$settings->logo.'" height="40"/>':''!!}</td>
 

@@ -10,7 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+ //Route::get('contact','mailController@getContact');
 
+// Route::POST('/contact','mailController@postContact');
 // Route::get('/', function () {
 //     return view('front.index');
 // });
@@ -22,6 +24,8 @@ Route::get('/', 'IndexFrontController@indexRender');
 Route::get('/stories', 'StoriesFrontController@storiesRender');
 Route::get('/proudcts', 'ProductsFrontController@productsRender');
 Route::get('/contacts', 'ContctsFrontController@contactsRender');
+
+Route::POST('/fat', 'ContctsFrontController@formSections');
 
 
 

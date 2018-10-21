@@ -15,18 +15,20 @@
                         <ul class="list-unstyled">
                             <li><i class="fa fa-send"></i> {{$settings->email}}</li>
                             <li><i class="fa fa-phone"></i> {{$settings->telephone}}</li>
-                            <li><i class="fa fa-map-marker"></i> This is a simple hero unit, a simple</li>
+                            <li><i class="fa fa-map-marker"></i> {{$settings->address}}</li>
                         </ul>
                     </div><!--/.information-->
                 </div><!--/.col-->
                 <div class="col-md-6">
                     <div class="contact-form">
-                        <form class="form-horizontal" action="/" method="POST" enctype="">
-                            <input type="text" name="" class="form-control" autocomplete="off" placeholder="name" required>
-                            <input type="text" name="" class="form-control" autocomplete="off" placeholder="phono" required>
-                            <input type="text" name="" class="form-control" autocomplete="off" placeholder="email" required>
-                            <textarea class="form-control" placeholder="message"></textarea>
-                            <input type="submit" value="send message" class="btn btn-contact">
+                        <form class="form-horizontal" action="/fat" method="POST">
+                        	{{csrf_field()}}
+                            <input type="text" name="name" class="form-control" autocomplete="off" placeholder="name" required>
+                            <input type="text" name="phone" class="form-control" autocomplete="off" placeholder="phono" required>
+                            <input type="text" name="email" class="form-control" autocomplete="off" placeholder="email" required>
+                            <textarea class="form-control" name="msg" placeholder="message"></textarea>
+                            <button type="submit" value="send message" class="btn btn-contact">uuu</button>
+
                         </form>
                     </div><!--/.contact-form-->
                 </div><!--/.col-->
@@ -40,5 +42,6 @@
         </div><!--/.container-->
     </div>
     <!--/.page-contact-->
+
 
 @endsection

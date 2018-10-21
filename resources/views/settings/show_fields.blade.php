@@ -48,6 +48,12 @@
     <p>{!! $settings->instgram_link !!}</p>
 </div>
 
+<!-- Logo Field -->
+<div class="form-group">
+    {!! Form::label('address', 'address:') !!}
+    <p>{!! $settings->address !!}</p>
+</div>
+
 <!-- Created At Field -->
 <div class="form-group">
     {!! Form::label('twitter_link', 'twitter link:') !!}

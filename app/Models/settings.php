@@ -33,6 +33,7 @@ class settings extends Model
         'fb_link',
         'instgram_link',
         'twitter_link',
+        'address',
     ];
 
     /**
@@ -48,6 +49,7 @@ class settings extends Model
         'fb_link'=> 'string',
         'instgram_link'=> 'string',
         'twitter_link'=> 'string',
+        'address'=> 'string',
     ];
 
     /**
@@ -63,6 +65,7 @@ class settings extends Model
          'fb_link'=> 'required',
         'instgram_link'=> 'required',
         'twitter_link'=> 'required',
+         'address'=> 'required',
     ];
 
     
