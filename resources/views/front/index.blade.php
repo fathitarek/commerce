@@ -26,7 +26,7 @@
                         <a href="proudct.html">
                             <div class="img-proudct">
                                 
-                               {!!$product->images_product['image_url'] ? '<img class="img-responsive" src="/images/products/'.$product->images_product['image_url'].'" alt="'.$product->p_name.'">':''!!}
+                               {!!$product->images_product['image_url'] ? '<img class="img-responsive" src="/public/images/products/'.$product->images_product['image_url'].'" alt="'.$product->p_name.'">':''!!}
                             </div><!--/.img-proudct-->
                             <h4>{!! $product->p_name !!}</h4>
                             <span class="pull-left"><a href="vendor.html"><i class="fa fa-user"></i> {{ $product->seller['name'] }}</a></span>

@@ -18,7 +18,7 @@
 
 <!-- Url Field -->
 <div class="form-group">
-    {!! Form::label('url', 'Url:') !!}
+    {!! Form::label('url', ' Id Url:') !!}
     <p>{!! $stories->url !!}</p>
 </div>
 

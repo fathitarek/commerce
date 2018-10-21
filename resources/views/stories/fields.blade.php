@@ -12,7 +12,7 @@
 
 <!-- Url Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('url', 'Url:') !!}
+    {!! Form::label('url', 'Id Url:') !!}
     {!! Form::text('url', null, ['class' => 'form-control']) !!}
 </div>
 

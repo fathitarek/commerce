@@ -19,7 +19,8 @@
 Auth::routes();
 
 Route::get('/', 'IndexFrontController@indexRender');
-
+Route::get('/stories', 'StoriesFrontController@storiesRender');
+Route::get('/proudcts', 'ProductsFrontController@productsRender');
 
 
 

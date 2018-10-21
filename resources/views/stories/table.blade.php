@@ -3,7 +3,7 @@
         <tr>
             <th>Title</th>
         <th>Description</th>
-        <th>Url</th>
+        <th>Id Url</th>
             <th colspan="3">Action</th>
         </tr>
     </thead>
