@@ -13,8 +13,8 @@
                 <div class="col-md-6">
                     <div class="information">
                         <ul class="list-unstyled">
-                            <li><i class="fa fa-send"></i> lorem@yahoo.com</li>
-                            <li><i class="fa fa-phone"></i> +20 123 123 123 123 00</li>
+                            <li><i class="fa fa-send"></i> {{$settings->email}}</li>
+                            <li><i class="fa fa-phone"></i> {{$settings->telephone}}</li>
                             <li><i class="fa fa-map-marker"></i> This is a simple hero unit, a simple</li>
                         </ul>
                     </div><!--/.information-->
