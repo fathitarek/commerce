@@ -37,17 +37,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::resource('statusOrders', 'status_orderController');
-
 Route::resource('buyers', 'buyersController');
-
 Route::resource('sellers', 'sellersController');
-
 Route::post('products/search', 'productsController@search');
 Route::resource('products', 'productsController');
-
 Route::resource('stories', 'storiesController');
-
 Route::resource('settings', 'settingsController');
+Route::resource('indexControls', 'index_controlController');
+
+
 });
 
-Route::resource('indexControls', 'index_controlController');
+
+YO CREO, YO LE COMPRO A BOYACÁ
