@@ -61,7 +61,7 @@ class settings extends Model
         'email' => 'required',
         'location' => 'required',
         'telephone' => 'required',
-        'logo' => 'required|mimes:jpeg,png',
+        'logo' => 'mimes:jpeg,png',
          'fb_link'=> 'required',
         'instgram_link'=> 'required',
         'twitter_link'=> 'required',
