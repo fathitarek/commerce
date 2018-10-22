@@ -6,6 +6,12 @@
    
     <!--/.login-wrap-->
     <!--.header-->
+    <style type="text/css">
+        
+        .header {
+    background: url(/public/images/index_control/{{$index_control->image2}});
+
+    </style>
     <header class="header">
         <div class="intro">
             <a href="{{$settings->fb_link}}" target="_blank" rel="nofollow"> <i class="fa fa-facebook-square" aria-hidden="true"></i></a>
