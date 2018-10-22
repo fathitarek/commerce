@@ -49,4 +49,3 @@ Route::resource('indexControls', 'index_controlController');
 });
 
 
-YO CREO, YO LE COMPRO A BOYACÁ
