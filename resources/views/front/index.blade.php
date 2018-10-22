@@ -47,7 +47,7 @@
             <div class="text-about">
                 <h2>{{$index_control->title2}}</h2>
                 <p>
-                    {{$index_control->paragraph2}}
+                    {!! $index_control->paragraph2 !!}
                 </p>
             </div>
         </div><!--/.container-->
