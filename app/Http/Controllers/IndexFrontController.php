@@ -7,6 +7,7 @@ use DB;
 use App\Models\images_products;
 use App\Models\products;
 use App\Models\settings;
+use App\Models\index_control;
 
 class IndexFrontController  extends Controller
 {
@@ -24,8 +25,10 @@ class IndexFrontController  extends Controller
 
      $productsPopular=$this->productsPopularSections();
      $settings=$this->socialMediaSection();
+     $index_control=$this->indexControllSection();
+     //dd($index_control);
      return view('front.index')
-            ->with('productsPopular', $productsPopular)->with('settings',$settings);
+            ->with('productsPopular', $productsPopular)->with('settings',$settings)->with('index_control',$index_control);
 
    }
     public function productsPopularSections(){
@@ -39,4 +42,10 @@ class IndexFrontController  extends Controller
        $settings= settings::first();
        return $settings;
     }  
+
+
+     public function indexControllSection(){
+       $index_control= index_control::first();
+       return $index_control;
+    }
 }

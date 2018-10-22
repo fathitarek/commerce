@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use File;
+use Illuminate\Support\Facades\Input;
 
 class index_controlController extends AppBaseController
 {
@@ -114,6 +116,7 @@ class index_controlController extends AppBaseController
      */
     public function update($id, Updateindex_controlRequest $request)
     {
+        $destination = public_path() . '/images/index_control/'; // upload path
         $indexControl = $this->indexControlRepository->findWithoutFail($id);
 
         if (empty($indexControl)) {
@@ -121,8 +124,21 @@ class index_controlController extends AppBaseController
 
             return redirect(route('indexControls.index'));
         }
+        $input = $request->all();
+if(!is_null(Input::file('image1'))){
+        $image1 = $this->uploadFile('image1', $destination);
+       // return $similar_sections['image_en'].$image_en ;
+        if (gettype($image1) == 'string'){$input['image1'] = $image1;}
+        }
 
-        $indexControl = $this->indexControlRepository->update($request->all(), $id);
+
+if(!is_null(Input::file('image2'))){
+        $image2 = $this->uploadFile('image2', $destination);
+       // return $similar_sections['image_en'].$image_en ;
+        if (gettype($image2) == 'string'){$input['image2'] = $image2;}
+        }
+
+        $indexControl = $this->indexControlRepository->update($input, $id);
 
         Flash::success('Index Control updated successfully.');
 

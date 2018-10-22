@@ -57,7 +57,7 @@ class index_control extends Model
         'image1' => 'mimes:jpeg,png',
         'title2' => 'required',
         'paragraph' => 'required',
-        'image2' => 'mimes:jpeg,png'
+        'image2' => 'mimes:jpeg,png',
     ];
 
     

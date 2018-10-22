@@ -18,8 +18,8 @@
 
 <!-- Paragraph Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('paragraph', 'Paragraph:') !!}
-    {!! Form::text('paragraph', null, ['class' => 'form-control']) !!}
+    {!! Form::label('paragraph2', 'Paragraph2:') !!}
+    {!! Form::text('paragraph2', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Image2 Field -->

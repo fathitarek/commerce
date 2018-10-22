@@ -26,8 +26,8 @@
 
 <!-- Paragraph Field -->
 <div class="form-group">
-    {!! Form::label('paragraph', 'Paragraph:') !!}
-    <p>{!! $indexControl->paragraph !!}</p>
+    {!! Form::label('paragraph2', 'Paragraph2:') !!}
+    <p>{!! $indexControl->paragraph2 !!}</p>
 </div>
 
 <!-- Image2 Field -->
