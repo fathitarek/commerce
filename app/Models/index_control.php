@@ -30,7 +30,7 @@ class index_control extends Model
         'paragraph',
         'image1',
         'title2',
-        'paragraph',
+        'paragraph2',
         'image2'
     ];
 
@@ -43,7 +43,7 @@ class index_control extends Model
         'paragraph' => 'string',
         'image1' => 'string',
         'title2' => 'string',
-        'paragraph' => 'string',
+        'paragraph2' => 'string',
         'image2' => 'string'
     ];
 
@@ -56,7 +56,7 @@ class index_control extends Model
         'paragraph' => 'required',
         'image1' => 'mimes:jpeg,png',
         'title2' => 'required',
-        'paragraph' => 'required',
+        'paragraph2' => 'required',
         'image2' => 'mimes:jpeg,png',
     ];
 
