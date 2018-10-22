@@ -49,3 +49,5 @@ Route::resource('stories', 'storiesController');
 
 Route::resource('settings', 'settingsController');
 });
+
+Route::resource('indexControls', 'index_controlController');

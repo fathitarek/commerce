@@ -41,3 +41,6 @@ Route::resource('settings', 'settingsAPIController');
 
 
 
+
+
+Route::resource('index_controls', 'index_controlAPIController');

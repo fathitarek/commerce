@@ -27,3 +27,7 @@
     <a href="{!! route('settings.index') !!}"><i class="fa fa-edit"></i><span>Settings</span></a>
 </li>
 
+<li class="{{ Request::is('indexControls*') ? 'active' : '' }}">
+    <a href="{!! route('indexControls.index') !!}"><i class="fa fa-edit"></i><span>Index Controls</span></a>
+</li>
+
