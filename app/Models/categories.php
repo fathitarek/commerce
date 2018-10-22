@@ -25,7 +25,8 @@ class categories extends Model
 
     public $fillable = [
         'name',
-        'image'
+        'image',
+        'description',
     ];
 
     /**
@@ -35,7 +36,8 @@ class categories extends Model
      */
     protected $casts = [
         'name' => 'string',
-        'image' => 'string'
+        'image' => 'string',
+        'description'=>'string'
     ];
 
     /**
@@ -44,7 +46,9 @@ class categories extends Model
      * @var array
      */
     public static $rules = [
-        'name' => 'required'
+        'name' => 'required',
+        'description' => 'required',
+        'image'=>'mimes:jpeg,png'
     ];
 
    public function products() {

@@ -25,6 +25,11 @@ class CreatecategoriesRequest extends FormRequest
      */
     public function rules()
     {
-        return categories::$rules;
+        return  $rules = [
+        'name' => 'required',
+        'description' => 'required',
+        'image'=>'required|mimes:jpeg,png'
+    ];
+        //return categories::$rules;
     }
 }

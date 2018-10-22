@@ -13,9 +13,9 @@
  //Route::get('contact','mailController@getContact');
 
 // Route::POST('/category','mailController@postContact');
-Route::get('/category', function () {
-    return view('front.category');
-});
+// Route::get('/category', function () {
+//     return view('front.category');
+// });
 
 
 Auth::routes();
@@ -24,6 +24,8 @@ Route::get('/', 'IndexFrontController@indexRender');
 Route::get('/stories', 'StoriesFrontController@storiesRender');
 Route::get('/products', 'ProductsFrontController@productsRender');
 Route::get('/contacts', 'ContctsFrontController@contactsRender');
+Route::get('/category', 'CategoriesFrontController@categoriesRender');
+
 
 Route::POST('/fat', 'ContctsFrontController@formSections');
 

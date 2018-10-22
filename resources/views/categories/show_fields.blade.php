@@ -10,10 +10,19 @@
     <p>{!! $categories->name !!}</p>
 </div>
 
+<!-- description Field -->
+<div class="form-group">
+    {!! Form::label('description', 'Description:') !!}
+    <p>{!! $categories->description !!}</p>
+</div>
+
 <!-- Image Field -->
 <div class="form-group">
     {!! Form::label('image', 'Image:') !!}
-    <p>{!! $categories->image !!}</p>
+    <p>
+          <img src="/public/images/categories/{{$categories->image}}" alt="{{$categories->name}}"  height="300px" width="300px">
+
+    </p>
 </div>
 
 <!-- Created At Field -->

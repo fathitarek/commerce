@@ -6,55 +6,30 @@
     <div class="page-category">
         <div class="container">
             <ol class="breadcrumb">
-                <li><a href="#">lorem1</a></li>
-                <li class="active">lorem3</li>
+                <li><a href="{{URL('/')}}">home</a></li>
+                <li class="active">Categories</li>
             </ol><!--/.breadcrumb-->
             <div class="row">
+                @foreach( $categories as $category)
+
                 <div class="col-md-offset-3 col-md-8">
                     <a href="proudcts.html">
                         <div class="gategory">
                             <div class="text-catergory">
-                                <h4>Joyería</h4>
+                                <h4>{!! $category->name !!}</h4>
                                 <p>
-                                   This is a simple hero unit, a simple jumbotron-style component for calling extra attention This is a simple hero unit, a simple jumbotron-style component for calling extra attention This is a simple hero unit, a simple jumbotron-style component for calling extra attention 
+                                  {!! $category->description !!}
                                 </p>
                             </div><!--/.text-catergory-->
                             <div class="image-catergory">
-                                <img class="img-responsive" src="img/cat.jpg" alt="">
+                                {!!$category->image ? '  <img class="img-responsive" src="/public/images/categories/'.$category->image.'" alt="'.$category->name.'" >':''!!}
+                               
                             </div><!--/.image-catergory-->
                         </div><!--/.gategory-->
                     </a>
                 </div><!--/.col-->
-                <div class="col-md-offset-3 col-md-8">
-                    <a href="proudcts.html">
-                        <div class="gategory">
-                            <div class="text-catergory">
-                                <h4>Joyería</h4>
-                                <p>
-                                   This is a simple hero unit, a simple jumbotron-style component for calling extra attention This is a simple hero unit, a simple jumbotron-style component for calling extra attention This is a simple hero unit, a simple jumbotron-style component for calling extra attention 
-                                </p>
-                            </div><!--/.text-catergory-->
-                            <div class="image-catergory">
-                                <img class="img-responsive" src="img/cat.jpg" alt="">
-                            </div><!--/.image-catergory-->
-                        </div><!--/.gategory-->
-                    </a>
-                </div><!--/.col-->
-                <div class="col-md-offset-3 col-md-8">
-                    <a href="proudcts.html">
-                        <div class="gategory">
-                            <div class="text-catergory">
-                                <h4>Joyería</h4>
-                                <p>
-                                   This is a simple hero unit, a simple jumbotron-style component for calling extra attention This is a simple hero unit, a simple jumbotron-style component for calling extra attention This is a simple hero unit, a simple jumbotron-style component for calling extra attention 
-                                </p>
-                            </div><!--/.text-catergory-->
-                            <div class="image-catergory">
-                                <img class="img-responsive" src="img/cat.jpg" alt="">
-                            </div><!--/.image-catergory-->
-                        </div><!--/.gategory-->
-                    </a>
-                </div><!--/.col-->
+            @endforeach
+                
             </div><!--/.row-->
         </div><!--/.container-->
     </div>

@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use Illuminate\Support\Facades\Input;
 
 class categoriesController extends AppBaseController
 {
@@ -57,8 +58,14 @@ class categoriesController extends AppBaseController
      */
     public function store(CreatecategoriesRequest $request)
     {
+        
+        $destination = public_path() . '/images/categories/'; // upload path
         $input = $request->all();
-
+if(!is_null(Input::file('image'))){
+        $image = $this->uploadFile('image', $destination);
+       // return $similar_sections['image_en'].$image_en ;
+        if (gettype($image) == 'string'){$input['image'] = $image;}
+        }
         $categories = $this->categoriesRepository->create($input);
 
         Flash::success('Categories saved successfully.');
@@ -94,7 +101,7 @@ class categoriesController extends AppBaseController
      * @return Response
      */
     public function edit($id)
-    {
+    {  
         $categories = $this->categoriesRepository->findWithoutFail($id);
 
         if (empty($categories)) {
@@ -116,6 +123,8 @@ class categoriesController extends AppBaseController
      */
     public function update($id, UpdatecategoriesRequest $request)
     {
+
+        $destination = public_path() . '/images/categories/'; // upload path
         $categories = $this->categoriesRepository->findWithoutFail($id);
 
         if (empty($categories)) {
@@ -123,8 +132,14 @@ class categoriesController extends AppBaseController
 
             return redirect(route('categories.index'));
         }
+ $input = $request->all();
 
-        $categories = $this->categoriesRepository->update($request->all(), $id);
+ if(!is_null(Input::file('image'))){
+        $image = $this->uploadFile('image', $destination);
+       // return $similar_sections['image_en'].$image_en ;
+        if (gettype($image) == 'string'){$input['image'] = $image;}
+        }
+        $categories = $this->categoriesRepository->update($input, $id);
 
         Flash::success('Categories updated successfully.');
 

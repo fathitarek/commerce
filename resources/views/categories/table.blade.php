@@ -10,7 +10,8 @@
     @foreach($categories as $categories)
         <tr>
             <td>{!! $categories->name !!}</td>
-            <td>{!! $categories->image !!}</td>
+            <td>{!!$categories->image ? '<img src="/public/images/categories/'.$categories->image.'" height="40"/>':''!!}</td>
+            
             <td>
                 {!! Form::open(['route' => ['categories.destroy', $categories->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
