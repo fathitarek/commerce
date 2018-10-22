@@ -12,10 +12,10 @@
 */
  //Route::get('contact','mailController@getContact');
 
-// Route::POST('/contact','mailController@postContact');
-// Route::get('/', function () {
-//     return view('front.index');
-// });
+// Route::POST('/category','mailController@postContact');
+Route::get('/category', function () {
+    return view('front.category');
+});
 
 
 Auth::routes();
