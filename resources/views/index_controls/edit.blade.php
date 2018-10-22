@@ -11,7 +11,7 @@
        <div class="box box-primary">
            <div class="box-body">
                <div class="row">
-                   {!! Form::model($indexControl, ['route' => ['indexControls.update', $indexControl->id], 'method' => 'patch']) !!}
+                   {!! Form::model($indexControl, ['route' => ['indexControls.update', $indexControl->id], 'method' => 'patch','files' => true]) !!}
 
                         @include('index_controls.fields')
 

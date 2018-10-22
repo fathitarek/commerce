@@ -54,10 +54,10 @@ class index_control extends Model
      */
     public static $rules = [
         'paragraph' => 'required',
-        'image1' => 'required',
+        'image1' => 'mimes:jpeg,png',
         'title2' => 'required',
         'paragraph' => 'required',
-        'image2' => 'required'
+        'image2' => 'mimes:jpeg,png'
     ];
 
     

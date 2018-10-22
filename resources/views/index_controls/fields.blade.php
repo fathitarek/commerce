@@ -7,7 +7,7 @@
 <!-- Image1 Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('image1', 'Image1:') !!}
-    {!! Form::text('image1', null, ['class' => 'form-control']) !!}
+    {!! Form::file('image1', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Title2 Field -->
@@ -25,7 +25,7 @@
 <!-- Image2 Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('image2', 'Image2:') !!}
-    {!! Form::text('image2', null, ['class' => 'form-control']) !!}
+    {!! Form::file('image2', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

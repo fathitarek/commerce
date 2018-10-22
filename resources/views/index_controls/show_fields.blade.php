@@ -13,7 +13,9 @@
 <!-- Image1 Field -->
 <div class="form-group">
     {!! Form::label('image1', 'Image1:') !!}
-    <p>{!! $indexControl->image1 !!}</p>
+    <p>
+<img src="/images/index_control/{{$indexControl->image1}}" alt="{{$indexControl->paragraph}}"  height="300px" width="300px">
+    </p>
 </div>
 
 <!-- Title2 Field -->
@@ -31,7 +33,11 @@
 <!-- Image2 Field -->
 <div class="form-group">
     {!! Form::label('image2', 'Image2:') !!}
-    <p>{!! $indexControl->image2 !!}</p>
+    <p>
+          <img src="/images/index_control/{{$indexControl->image2}}" alt="{{$indexControl->title2}}"  height="300px" width="300px">
+
+    </p>
+
 </div>
 
 <!-- Created At Field -->

@@ -13,10 +13,10 @@
     @foreach($indexControls as $indexControl)
         <tr>
             <td>{!! $indexControl->paragraph !!}</td>
-            <td>{!! $indexControl->image1 !!}</td>
+              <td>{!!$indexControl->image1 ? '<img src="/public/images/index_control/'.$indexControl->image1.'" height="40"/>':''!!}</td>
             <td>{!! $indexControl->title2 !!}</td>
-            <td>{!! $indexControl->paragraph !!}</td>
-            <td>{!! $indexControl->image2 !!}</td>
+           
+              <td>{!!$product->image2? '<img src="/public/images/index_control/'.$indexControl->image2.'" height="40"/>':''!!}</td>
             <td>
                 {!! Form::open(['route' => ['indexControls.destroy', $indexControl->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
