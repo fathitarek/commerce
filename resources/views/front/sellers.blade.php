@@ -19,9 +19,9 @@
                      {!!$seller->logo ? ' <img  src="/public/images/sellers/'.$seller->logo.'" alt="'.$seller->name.'" >':''!!}
                     <div class="overlay">
                         <div class="text">
-                            <h3>{!! $seller->name !!}</h3>
+                            <h3>{!! $seller->name !!} {!! $seller->super_name !!}</h3>
                             <span><i class="fa fa-map-marker"></i> {!! $seller->city !!}</span>
-                            <a class="view-seller" href="vendor.html"><i class="fa fa-arrow-right"></i> view profile</a>
+                            <a class="view-seller" href="{{URL('vendor/')}}/{!! $seller->id !!}"><i class="fa fa-arrow-right"></i> view profile</a>
                         </div>
                     </div>
                 </div><!--/.seller-->
