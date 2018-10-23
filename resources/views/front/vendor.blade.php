@@ -52,50 +52,21 @@
             <h2 class="text-center">Proudctos</h2>
             <hr>
             <div class="row">
+                 @foreach ($products as $product) 
                 <div class="col-md-3">
                     <div class="proudct">
                         <a href="proudct.html">
                             <div class="img-proudct">
-                                <img class="img-responsive" src="img/C9D287pXoAAorJp.jpg" alt="">
+                                 {!!$product->logo ? ' <img  class="img-responsive"  src="/images/products/'.$product->image_url.'" alt="'.$product->p_name.'" >':''!!}
                             </div><!--/.img-proudct-->
-                            <h4>lorem</h4>
-                            <span>40.00$</span>
+                            <h4>{!! $product->p_name !!}</h4>
+                            <span>{!! $product->price !!}$</span>
                         </a>
                     </div><!--/.proudct-->
+               
                 </div><!--/.col-->
-                <div class="col-md-3">
-                    <div class="proudct">
-                        <a href="proudct.html">
-                            <div class="img-proudct">
-                                <img class="img-responsive" src="img/C9D287pXoAAorJp.jpg" alt="">
-                            </div><!--/.img-proudct-->
-                            <h4>lorem</h4>
-                            <span>40.00$</span>
-                        </a>
-                    </div><!--/.proudct-->
-                </div><!--/.col-->
-                <div class="col-md-3">
-                    <div class="proudct">
-                        <a href="proudct.html">
-                            <div class="img-proudct">
-                                <img class="img-responsive" src="img/C9D287pXoAAorJp.jpg" alt="">
-                            </div><!--/.img-proudct-->
-                            <h4>lorem</h4>
-                            <span>40.00$</span>
-                        </a>
-                    </div><!--/.proudct-->
-                </div><!--/.col-->
-                <div class="col-md-3">
-                    <div class="proudct">
-                        <a href="proudct.html">
-                            <div class="img-proudct">
-                                <img class="img-responsive" src="img/C9D287pXoAAorJp.jpg" alt="">
-                            </div><!--/.img-proudct-->
-                            <h4>lorem</h4>
-                            <span>40.00$</span>
-                        </a>
-                    </div><!--/.proudct-->
-                </div><!--/.col-->
+                 @endforeach
+
             </div><!--/.row-->
         </div><!--/.container-->
     </div>
@@ -105,7 +76,7 @@
         <div class="col-md-6">
             <div class="review">
                 <li class="image-review">
-                    <img class="img-responsive" src="img/C9D287pXoAAorJp.jpg" alt="">
+                    <img class="img-responsive" src="/front/img/C9D287pXoAAorJp.jpg" alt="">
                 </li>
                 <li>
                     <h3>Loka Morad</h3>
