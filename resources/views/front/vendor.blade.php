@@ -1,6 +1,42 @@
 @extends('front.layouts.app')
       <link rel="stylesheet" href="{{ asset('front/css/style-pages.css')}}">
-
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAvIsz3M59Jyze3pfpZSXcOmFzH7KQ79Ys"></script>
+  <script>
+            function initialize() {
+                var locations = [];
+               // @if (count($locations))
+             //   @foreach($locations as $index => $location)
+                        @if ((trim($vendor['long']) != '') && (trim($location['lat'] != '')))
+                        var location = ['{{$vendor->name}}', '{{trim($vendor->latitude)}}', '{{trim($$vendor->languite)}}'];
+                 console.log(location)
+                locations.push(location);
+               // @endif
+                       // @endforeach
+                        @endif
+                        var map = new google.maps.Map(document.getElementById('googleMap'), {
+                        zoom: 6,
+                                center: new google.maps.LatLng(28.766622, 29.232078),
+//                               center: {lat: -34.397, lng: 150.644},
+                                mapTypeId: google.maps.MapTypeId.ROADMAP
+                        }
+                        );
+                var infowindow = new google.maps.InfoWindow();
+                var marker, i;
+                for (i = 0; i < locations.length; i++) {
+                    marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                        map: map
+                    });
+                    google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                        return function () {
+                            infowindow.setContent(locations[i][0]);
+                            infowindow.open(map, marker);
+                        }
+                    })(marker, i));
+                }
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
 @section('content')
  <!--.vendors-->
     <div class="vendors">
@@ -103,7 +139,10 @@
         </div><!--/.col-md-6-->
         <div class="col-md-6">
             <div class="maps">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8144344.122586517!2d-78.83513751389037!3d4.642084560322682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e15a43aae1594a3%3A0x9a0d9a04eff2a340!2sColombia!5e0!3m2!1sen!2seg!4v1536462246746" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen=""></iframe>                        </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8144344.122586517!2d-78.83513751389037!3d4.642084560322682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e15a43aae1594a3%3A0x9a0d9a04eff2a340!2sColombia!5e0!3m2!1sen!2seg!4v1536462246746" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen=""></iframe>                        
+
+<div id="googleMap"  width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen=""></div>
+            </div>
         </div><!--/.col-md-6-->
     </div><!--/.row-->
      @endsection
