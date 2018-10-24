@@ -25,6 +25,17 @@ class UpdatesellersRequest extends FormRequest
      */
     public function rules()
     {
-        return sellers::$rules;
+        return $rules = [
+       /* 'name' => 'required',
+        'email' => 'required|email',
+        'password' => 'required',
+        //'token' => 'required',
+        'super_name' => 'required'*/
+         'active'=> 'required',
+        'logo'=> '',
+        'city'=> 'required',
+        'latitude'=> 'required',
+        'languite'=> 'required'
+    ];
     }
 }

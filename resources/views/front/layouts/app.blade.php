@@ -9,6 +9,8 @@
     <title>Nova Solution Co.</title>
     <!--icon-->
     <link rel="icon" href="{{ asset('front/img/LOGOS%20GOBER-12.png') }}">
+            <!-- <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAvIsz3M59Jyze3pfpZSXcOmFzH7KQ79Ys"></script> -->
+
     <!--Bootstrap 4-->
     <link rel="stylesheet" href="{{ asset('front/css/bootstrap.min.css') }}">
     <!--fontawesome-->

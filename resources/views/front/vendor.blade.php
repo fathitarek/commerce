@@ -1,21 +1,22 @@
 @extends('front.layouts.app')
       <link rel="stylesheet" href="{{ asset('front/css/style-pages.css')}}">
         <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAvIsz3M59Jyze3pfpZSXcOmFzH7KQ79Ys"></script>
+ <style type="text/css">
+         #googleMap{    overflow: visible;}
+     </style>
   <script>
             function initialize() {
                 var locations = [];
-               // @if (count($locations))
-             //   @foreach($locations as $index => $location)
-                        @if ((trim($vendor['long']) != '') && (trim($location['lat'] != '')))
-                        var location = ['{{$vendor->name}}', '{{trim($vendor->latitude)}}', '{{trim($$vendor->languite)}}'];
+            
+                        
+                        var location = ['{{$vendor->address}}', '{{trim($vendor->latitude)}}', '{{trim($vendor->languite)}}'];
                  console.log(location)
                 locations.push(location);
-               // @endif
-                       // @endforeach
-                        @endif
+            console.log(locations)
+                       
                         var map = new google.maps.Map(document.getElementById('googleMap'), {
                         zoom: 6,
-                                center: new google.maps.LatLng(28.766622, 29.232078),
+                                center: new google.maps.LatLng('{{trim($vendor->latitude)}}', '{{trim($vendor->languite)}}'),
 //                               center: {lat: -34.397, lng: 150.644},
                                 mapTypeId: google.maps.MapTypeId.ROADMAP
                         }
@@ -23,6 +24,7 @@
                 var infowindow = new google.maps.InfoWindow();
                 var marker, i;
                 for (i = 0; i < locations.length; i++) {
+                    console.log(locations[i][1]);
                     marker = new google.maps.Marker({
                         position: new google.maps.LatLng(locations[i][1], locations[i][2]),
                         map: map
@@ -139,10 +141,11 @@
         </div><!--/.col-md-6-->
         <div class="col-md-6">
             <div class="maps">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8144344.122586517!2d-78.83513751389037!3d4.642084560322682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e15a43aae1594a3%3A0x9a0d9a04eff2a340!2sColombia!5e0!3m2!1sen!2seg!4v1536462246746" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen=""></iframe>                        
+                <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8144344.122586517!2d-78.83513751389037!3d4.642084560322682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e15a43aae1594a3%3A0x9a0d9a04eff2a340!2sColombia!5e0!3m2!1sen!2seg!4v1536462246746" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen=""></iframe>  -->                       
 
-<div id="googleMap"  width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen=""></div>
+<div id="googleMap"  style="height:100%;width:100%"></div>
             </div>
         </div><!--/.col-md-6-->
     </div><!--/.row-->
      @endsection
+    
