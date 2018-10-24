@@ -27,7 +27,7 @@ Route::get('/contacts', 'ContctsFrontController@contactsRender');
 Route::get('/category', 'CategoriesFrontController@categoriesRender');
 Route::get('/sellers', 'SellersFrontController@sellersRender');
 Route::get('/vendor/{id}', 'VendorFrontController@vendorRender');
-
+Route::get('/product/{id}', 'ProductFrontController@productRender');
 
 Route::POST('/fat', 'ContctsFrontController@formSections');
 
