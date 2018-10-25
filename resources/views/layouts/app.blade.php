@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/skins/square/_all.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css">
-
+<script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
     @yield('css')
 </head>
 
@@ -159,5 +159,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
 
     @yield('scripts')
+    <script type="text/javascript">
+    //<![CDATA[
+    bkLib.onDomLoaded(function() {
+        nicEditors.allTextAreas(
+            {buttonList : ['bold','italic','underline','left','center','right','justify','ol','ul','forecolor','bgcolor']}
+        ) ;
+        nicEditor(
+            {buttonList : ['fontSize','bold','italic','underline','strikeThrough','subscript','superscript','html','image']}
+        );
+
+    });
+    //]]>
+</script>
 </body>
 </html>
