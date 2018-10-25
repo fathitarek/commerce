@@ -38,7 +38,8 @@
 <!-- Description Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('description', 'Description:') !!}
-    {!! Form::text('description', null, ['class' => 'form-control']) !!}
+    
+    {!! Form::textarea('description', null, ['id' => 'description', 'rows' => 4, 'cols' => 54, 'style' => 'resize:none']) !!}
 </div>
 
 
