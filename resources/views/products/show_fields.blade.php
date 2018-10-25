@@ -82,7 +82,5 @@
 }
 ?>
  
-   
-<img  class="img-circle img-thumbnail"  src="{{URL('/images/sellers/')}}/{{$product->seller['logo']}}" alt="{{ $product->seller['name'] }}"/>
                                
   
