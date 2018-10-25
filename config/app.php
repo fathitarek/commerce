@@ -182,6 +182,7 @@ Prettus\Repository\Providers\RepositoryServiceProvider::class,
 \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
 \InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class, 
 \InfyOm\RoutesExplorer\RoutesExplorerServiceProvider::class,
+Yajra\Datatables\DatatablesServiceProvider::class,
 
 
     ],
@@ -235,6 +236,7 @@ Prettus\Repository\Providers\RepositoryServiceProvider::class,
         'Form'      => Collective\Html\FormFacade::class,
 'Html'      => Collective\Html\HtmlFacade::class,
 'Flash'     => Laracasts\Flash\Flash::class,
+'Datatables' => Yajra\Datatables\Facades\Datatables::class,
 
 
     ],
