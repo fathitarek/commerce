@@ -50,7 +50,7 @@
 <!-- Logo Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('images_products', 'Images:') !!}
-    {!! Form::file('images_products[]', null, ['class' => 'form-control']) !!}
+       <input type="file" name="images_products[]" id="images" multiple >
 </div>
 <!-- Logo Field -->
 <div class="form-group col-sm-6">
