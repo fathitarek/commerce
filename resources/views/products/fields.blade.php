@@ -55,7 +55,7 @@
 <!-- Logo Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('images_products', 'Images:') !!}
-    {!! Form::file('images_products[]', null, ['class' => 'form-control']) !!}
+    {!! Form::file('images_products[]', null, ['class' => 'form-control','multiple']) !!}
 </div>
 <!-- Logo Field -->
 <div class="form-group col-sm-6">
