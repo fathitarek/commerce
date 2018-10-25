@@ -75,7 +75,6 @@
    foreach($images_products as $image){
  ?>
   <div class="form-group  col-sm-6">
-          <img src="/images/products/{{$image->image_url}}" alt="{{$products->p_name}}"  height="300px" width="300px">
 <img src="{{URL('/images/products/')}}/{{$image->image_url}}" alt="{{$products->p_name}}"  height="300px" width="300px">
 </div>
 <?php    
