@@ -86,7 +86,7 @@
  *          @SWG\Schema(
  *              @SWG\Property(
  *                  property="data",
- *                  ref="#/components/schemas/Product"
+ *                  ref="#/definitions/Product"
  *              )
  *          )
  *     ),

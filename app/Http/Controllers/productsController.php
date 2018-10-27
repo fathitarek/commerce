@@ -17,6 +17,7 @@ use App\Models\images_products;
 use App\Models\status_order;
 use Illuminate\Support\Facades\Input;
 use App\Models\products;
+use Yajra\Datatables\Facades\Datatables;
 
 class productsController extends AppBaseController
 {
@@ -72,7 +73,7 @@ $products = products::where('p_name','like', '%' . $request->p_name . '%')
     {
         $this->productsRepository->pushCriteria(new RequestCriteria($request));
        // $products = $this->productsRepository->all();
-        $products=products::latest()->paginate(5);
+        $products=products::select(['id', 'image', 'p_name', 'category', 'seller','price($)','publish'])->latest()->get();
         foreach ($products as $product) {
                 $product->images_product = images_products::where('product_id', $product->id)->first();
 
@@ -80,8 +81,15 @@ $products = products::where('p_name','like', '%' . $request->p_name . '%')
 // dd($products);
              $count_products = products::count();
 
-        return view('products.index')
-            ->with('products', $products)->with('count_products',$count_products);
+       // return view('products.index')
+          //  ->with('products', $products)->with('count_products',$count_products);
+       // $users = User::select(['id', 'name', 'email', 'created_at', 'updated_at']);
+
+        return Datatables::of($users)->make(true);
+
+
+return Datatables::of($products)->make(true);
+
     }
 
     /**
